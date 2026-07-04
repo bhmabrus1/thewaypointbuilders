@@ -1,334 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" data-precedence="default" />
-        <link rel="stylesheet" href="styles.css" type="text/css" data-precedence="default" />
-        <title>Subcontractor Registration — Waypoint Builders LLC</title>
-        <meta name="description" content="Register as a subcontractor with Waypoint Builders LLC. Join our network of quality trade professionals." />
-        <link rel="icon" type="image/x-icon" href="asset/favicon.ico" />
-        <link rel="shortcut icon" href="asset/favicon.ico" />
-        <style>
-            @keyframes fadeUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(30px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                }
-                to {
-                    opacity: 1;
-                }
-            }
+    <title>Subcontractor Registration | Waypoint Builders LLC</title>
+    <meta
+        name="description"
+        content="Register as a subcontractor with Waypoint Builders LLC and join our Arizona network of trusted trade professionals for upcoming residential construction projects."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://thewaypointbuilders.com/subcontracts.html" />
 
-            .animate-fade-up {
-                animation: fadeUp 0.8s ease-out forwards;
+    <meta property="og:title" content="Subcontractor Registration | Waypoint Builders LLC" />
+    <meta
+        property="og:description"
+        content="Register as a subcontractor with Waypoint Builders LLC and join our Arizona network of trusted trade professionals for upcoming residential construction projects."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://thewaypointbuilders.com/subcontracts.html" />
+    <meta property="og:site_name" content="Waypoint Builders LLC" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Subcontractor Registration | Waypoint Builders LLC" />
+    <meta
+        name="twitter:description"
+        content="Register as a subcontractor with Waypoint Builders LLC and join our Arizona network of trusted trade professionals for upcoming residential construction projects."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+        data-precedence="default"
+    />
+    <link rel="stylesheet" href="styles.css" type="text/css" data-precedence="default" />
+
+    <link rel="icon" type="image/x-icon" href="asset/favicon.ico" />
+    <link rel="shortcut icon" href="asset/favicon.ico" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Subcontractor Registration",
+      "url": "https://thewaypointbuilders.com/subcontracts.html",
+      "description": "Register as a subcontractor with Waypoint Builders LLC and join our Arizona network of trusted trade professionals for upcoming residential construction projects.",
+      "mainEntity": {
+        "@type": "HomeAndConstructionBusiness",
+        "name": "Waypoint Builders LLC",
+        "url": "https://thewaypointbuilders.com/",
+        "logo": "https://thewaypointbuilders.com/asset/logo.png",
+        "areaServed": {
+          "@type": "State",
+          "name": "Arizona"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
                 opacity: 0;
             }
-
-            .animate-fade-in {
-                animation: fadeIn 1s ease-out forwards;
-                opacity: 0;
+            to {
+                opacity: 1;
             }
+        }
 
-            .delay-200 {
-                animation-delay: 0.2s;
-            }
+        .animate-fade-up {
+            animation: fadeUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
 
-            .delay-400 {
-                animation-delay: 0.4s;
-            }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
 
-            .delay-600 {
-                animation-delay: 0.6s;
-            }
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
 
-            .delay-800 {
-                animation-delay: 0.8s;
-            }
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
 
-            .ownership-buttons {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-                gap: 0.8rem;
-                margin-top: 0.6rem;
-            }
+        .delay-600 {
+            animation-delay: 0.6s;
+        }
 
-            .ownership-button {
-                padding: 0.9rem 1rem;
-                border: 1px solid rgba(200, 168, 107, 0.3);
-                background: rgba(255,255,255,0.04);
-                color: #EDE9E0;
-                cursor: pointer;
-                border-radius: 12px;
-                font-family: DM Sans, system-ui, sans-serif;
-                font-size: 12px;
-                letter-spacing: 0.16em;
-                text-transform: uppercase;
-                transition: all 0.3s ease;
-            }
+        .delay-800 {
+            animation-delay: 0.8s;
+        }
 
-            .ownership-button:hover {
-                border-color: rgba(229, 199, 122, 0.6);
-                background: rgba(229, 199, 122, 0.1);
-            }
+        .ownership-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.8rem;
+            margin-top: 0.6rem;
+        }
 
-            .ownership-button.selected {
-                background: rgba(229, 199, 122, 0.2);
-                border-color: rgba(229, 199, 122, 0.8);
-                color: #E5C77A;
-            }
+        .ownership-button {
+            padding: 0.9rem 1rem;
+            border: 1px solid rgba(200, 168, 107, 0.3);
+            background: rgba(255,255,255,0.04);
+            color: #EDE9E0;
+            cursor: pointer;
+            border-radius: 12px;
+            font-family: DM Sans, system-ui, sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
 
-            .form-section {
-                margin-bottom: 2rem;
-                padding-bottom: 2rem;
-                border-bottom: 1px solid rgba(200, 168, 107, 0.18);
-                box-shadow: 0 8px 24px rgba(229, 199, 122, 0.04);
-            }
+        .ownership-button:hover {
+            border-color: rgba(229, 199, 122, 0.6);
+            background: rgba(229, 199, 122, 0.1);
+        }
 
-            .experience-layout {
-                display: flex;
-                flex-direction: column;
-                gap: 1.2rem;
-                align-items: stretch;
-                margin-top: 1rem;
-                width: 100%;
-            }
+        .ownership-button.selected {
+            background: rgba(229, 199, 122, 0.2);
+            border-color: rgba(229, 199, 122, 0.8);
+            color: #E5C77A;
+        }
 
-            .experience-copy {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                padding-top: 0.2rem;
-                width: 100%;
-            }
+        .form-section {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(200, 168, 107, 0.18);
+            box-shadow: 0 8px 24px rgba(229, 199, 122, 0.04);
+        }
 
-            .experience-copy p,
-            .experience-copy li {
-                font-family: DM Sans, system-ui, sans-serif;
-                font-size: 13px;
-                line-height: 1.8;
-                color: #8A837C;
-            }
+        .experience-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            align-items: stretch;
+            margin-top: 1rem;
+            width: 100%;
+        }
 
-            .experience-copy ul {
-                display: grid;
-                gap: 0.6rem;
-                padding-left: 1rem;
-                margin: 0;
-            }
+        .experience-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding-top: 0.2rem;
+            width: 100%;
+        }
 
-            .experience-visual {
-                position: relative;
-                min-height: auto;
-                border-radius: 24px;
-                overflow: hidden;
-                border: 1px solid rgba(229, 199, 122, 0.2);
-                box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
-                width: 100%;
-            }
+        .experience-copy p,
+        .experience-copy li {
+            font-family: DM Sans, system-ui, sans-serif;
+            font-size: 13px;
+            line-height: 1.8;
+            color: #8A837C;
+        }
 
-            .experience-visual img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                filter: brightness(0.72) saturate(0.88);
-            }
+        .experience-copy ul {
+            display: grid;
+            gap: 0.6rem;
+            padding-left: 1rem;
+            margin: 0;
+        }
 
+        .experience-visual {
+            position: relative;
+            min-height: auto;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(229, 199, 122, 0.2);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+            width: 100%;
+        }
+
+        .experience-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.72) saturate(0.88);
+        }
+
+        .hero-landing {
+            min-height: 100svh;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+
+        @supports not (height: 1svh) {
             .hero-landing {
-                min-height: 100svh;
-                position: relative;
-                display: flex;
-                align-items: flex-end;
-                overflow: hidden;
+                min-height: 100vh;
             }
+        }
 
-            @supports not (height: 1svh) {
-                .hero-landing {
-                    min-height: 100vh;
-                }
+        .experience-overlay {
+            position: absolute;
+            inset: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            padding: 1.1rem;
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(7, 7, 6, 0.82) 0%, rgba(20, 18, 16, 0.74) 100%);
+            border: 1px solid rgba(229, 199, 122, 0.18);
+            backdrop-filter: blur(14px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+        }
+
+        .experience-overlay-header {
+            font-family: DM Sans, system-ui, sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: #C8A86B;
+        }
+
+        .trades-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 0.7rem;
+            max-height: 520px;
+            overflow-y: auto;
+            padding-right: 0.3rem;
+            background: transparent;
+            border: 0;
+            border-radius: 0;
+            align-content: start;
+        }
+
+        .trade-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.55rem;
+            padding: 0.6rem 0.65rem;
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: 10px;
+        }
+
+        .trade-checkbox input[type="checkbox"] {
+            cursor: pointer;
+            accent-color: #C8A86B;
+            margin-top: 0.2rem;
+        }
+
+        .trade-checkbox label {
+            cursor: pointer;
+            font-family: DM Sans, system-ui, sans-serif;
+            font-size: 11px;
+            line-height: 1.45;
+            color: #F7F2E8;
+            margin: 0;
+        }
+
+        @media (max-width: 1300px) {
+            .trades-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
             }
+        }
 
-            .experience-overlay {
-                position: absolute;
-                inset: 1rem;
-                display: flex;
-                flex-direction: column;
-                gap: 0.9rem;
-                padding: 1.1rem;
-                border-radius: 18px;
-                background: linear-gradient(135deg, rgba(7, 7, 6, 0.82) 0%, rgba(20, 18, 16, 0.74) 100%);
-                border: 1px solid rgba(229, 199, 122, 0.18);
-                backdrop-filter: blur(14px);
-                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+        @media (max-width: 1100px) {
+            .trades-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
             }
+        }
 
-            .experience-overlay-header {
-                font-family: DM Sans, system-ui, sans-serif;
-                font-size: 11px;
-                letter-spacing: 0.24em;
-                text-transform: uppercase;
-                color: #C8A86B;
+        @media (max-width: 900px) {
+            .experience-visual {
+                min-height: auto;
             }
 
             .trades-grid {
-                display: grid;
-                grid-template-columns: repeat(5, minmax(0, 1fr));
-                gap: 0.7rem;
-                max-height: 520px;
-                overflow-y: auto;
-                padding-right: 0.3rem;
-                background: transparent;
-                border: 0;
-                border-radius: 0;
-                align-content: start;
-            }
-
-            .trade-checkbox {
-                display: flex;
-                align-items: flex-start;
-                gap: 0.55rem;
-                padding: 0.6rem 0.65rem;
-                background: transparent;
-                border: 1px solid transparent;
-                border-radius: 10px;
-            }
-
-            .trade-checkbox input[type="checkbox"] {
-                cursor: pointer;
-                accent-color: #C8A86B;
-                margin-top: 0.2rem;
-            }
-
-            .trade-checkbox label {
-                cursor: pointer;
-                font-family: DM Sans, system-ui, sans-serif;
-                font-size: 11px;
-                line-height: 1.45;
-                color: #F7F2E8;
-                margin: 0;
-            }
-
-            @media (max-width: 1300px) {
-                .trades-grid {
-                    grid-template-columns: repeat(4, minmax(0, 1fr));
-                }
-            }
-
-            @media (max-width: 1100px) {
-                .trades-grid {
-                    grid-template-columns: repeat(3, minmax(0, 1fr));
-                }
-            }
-
-            @media (max-width: 900px) {
-                .experience-visual {
-                    min-height: auto;
-                }
-
-                .trades-grid {
-                    grid-template-columns: repeat(2, minmax(0, 1fr));
-                }
-
-                .form-shell {
-                    padding: 1rem;
-                    border-radius: 20px;
-                }
-
-                .section-title {
-                    font-size: 24px;
-                }
-
-                div[style*="display:grid;grid-template-columns:1fr 1fr;gap:1rem"] {
-                    grid-template-columns: 1fr !important;
-                }
-
-                div[style*="display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem"] {
-                    grid-template-columns: 1fr !important;
-                }
-            }
-
-            @media (max-width: 640px) {
-                .trades-grid {
-                    grid-template-columns: 1fr;
-                }
-
-                .form-shell {
-                    padding: 0.9rem;
-                    border-radius: 18px;
-                }
-
-                .form-section {
-                    margin-bottom: 1.25rem;
-                    padding-bottom: 1.25rem;
-                }
-
-                .reference-box {
-                    padding: 1.1rem;
-                }
-
-                .ownership-buttons {
-                    grid-template-columns: 1fr 1fr;
-                }
-            }
-
-            .reference-box {
-                background: rgba(255,255,255,0.04);
-                border: 1px solid rgba(200, 168, 107, 0.2);
-                padding: 1.5rem;
-                border-radius: 12px;
-                margin-bottom: 1.5rem;
-            }
-
-            .reference-title {
-                font-family: DM Sans, system-ui, sans-serif;
-                font-size: 13px;
-                letter-spacing: 0.1em;
-                text-transform: uppercase;
-                color: #C8A86B;
-                margin-bottom: 1rem;
-                font-weight: 500;
-            }
-
-            .reference-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 1rem;
-            }
-
-            .section-title {
-                font-family: Cormorant Garamond, Georgia, serif;
-                font-size: 28px;
-                font-weight: 400;
-                letter-spacing: -0.01em;
-                color: #EDE9E0;
-                margin-bottom: 1.5rem;
-                padding-bottom: 1rem;
-                border-bottom: 2px solid rgba(200, 168, 107, 0.38);
-                box-shadow: 0 2px 10px rgba(229, 199, 122, 0.08);
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .form-shell {
-                max-width: 1120px;
-                margin: 0 auto;
-                padding: clamp(1rem, 2.5vw, 1.75rem);
-                border: 1px solid rgba(200, 168, 107, 0.14);
-                border-radius: 28px;
-                background: linear-gradient(135deg, rgba(12, 12, 11, 0.82), rgba(18, 16, 14, 0.74));
-                box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+                padding: 1rem;
+                border-radius: 20px;
             }
-            
-        </style>
-    </head>
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            div[style*="display:grid;grid-template-columns:1fr 1fr;gap:1rem"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            div[style*="display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .trades-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-shell {
+                padding: 0.9rem;
+                border-radius: 18px;
+            }
+
+            .form-section {
+                margin-bottom: 1.25rem;
+                padding-bottom: 1.25rem;
+            }
+
+            .reference-box {
+                padding: 1.1rem;
+            }
+
+            .ownership-buttons {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .reference-box {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(200, 168, 107, 0.2);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .reference-title {
+            font-family: DM Sans, system-ui, sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #C8A86B;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .reference-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .section-title {
+            font-family: Cormorant Garamond, Georgia, serif;
+            font-size: 28px;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            color: #EDE9E0;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(200, 168, 107, 0.38);
+            box-shadow: 0 2px 10px rgba(229, 199, 122, 0.08);
+        }
+
+        .form-shell {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: clamp(1rem, 2.5vw, 1.75rem);
+            border: 1px solid rgba(200, 168, 107, 0.14);
+            border-radius: 28px;
+            background: linear-gradient(135deg, rgba(12, 12, 11, 0.82), rgba(18, 16, 14, 0.74));
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+        }
+    </style>
+</head>
+
     <body style="background: #0c0c0b; color: #EDE9E0;">
         <header id="site-header" style="position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease, box-shadow 0.5s ease;background:transparent;backdrop-filter:none;border-bottom:1px solid transparent;box-shadow:none">
             <div style="max-width:1400px;margin:0 auto;padding:0 3rem;display:flex;align-items:center;justify-content:space-between;height:92px" class="px-6 lg:px-12">
