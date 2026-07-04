@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charSet="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="preload" as="image" href="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=900&amp;q=80&amp;fit=crop"/>
+        <link rel="preload" as="image" href="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&amp;q=80&amp;fit=crop"/>
+        <link rel="preload" as="image" href="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&amp;q=80&amp;fit=crop"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" data-precedence="default"/>
+        <link rel="stylesheet" href="styles.css" type="text/css" data-precedence="default"/>
+        <title>Waypoint Builders LLC — Luxury Custom Home Building</title>
+        <meta name="description" content="Waypoint Builders LLC crafts extraordinary luxury custom homes with uncompromising quality, precision craftsmanship, and a deeply personal approach to every build."/>
+        <link rel="icon" type="image/png" href="asset/favicon.png"/>
+        <link rel="shortcut icon" href="asset/favicon.png"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+    </head>
+    <body>
+        <header id="site-header" style="position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease, box-shadow 0.5s ease;background:transparent;backdrop-filter:none;border-bottom:1px solid transparent;box-shadow:none">
+            <div style="max-width:1400px;margin:0 auto;padding:0 3rem;display:flex;align-items:center;justify-content:space-between;height:92px" class="px-6 lg:px-12">
+                <a class="active" href="index.html" style="display:flex;align-items:center;text-decoration:none;padding-top:10px" data-status="active" aria-current="page">
+                    <img src="asset/logo.png" alt="Waypoint Builders logo" style="height:clamp(72px, 8vw, 140px);width:auto;display:block" />
+                </a>
+                <nav id="header-nav" class="header-nav" style="align-items:center;gap:1rem">
+                    <a class="header-nav-link active" href="index.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#A48240;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid rgba(164, 130, 64, 0.5)" data-status="active" aria-current="page">Home</a>
+                    <a class="header-nav-link" href="about.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">About</a>
+                    <a class="header-nav-link" href="services.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">Services</a>
+                    <a class="header-nav-link" href="projects.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">Projects</a>
+                    <a class="header-nav-link" href="contact.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">Contact</a>
+                    <a class="header-nav-link" href="subcontracts.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">Subcontracting</a>
+                </nav>
+                <div style="display:flex;align-items:center;gap:0.75rem">
+                    <span style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;font-weight:500;color:#C8A86B;padding:0.5rem 0.75rem;border:1px solid rgba(200, 168, 107, 0.28);border-radius:999px;background:rgba(255,255,255,0.03);box-shadow:inset 0 1px 0 rgba(255,255,255,0.03)">ROC 366594</span>
+                    <a href="contact.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;text-decoration:none;color:#E5C77A;background:rgba(138, 104, 43, 0.22);border:1px solid rgba(164, 130, 64, 0.3);padding:9px 18px;transition:border-color 0.3s ease, background 0.3s ease, color 0.3s ease" class="header-cta">Begin Your Build</a>
+                </div>
+                <button class="header-menu-toggle" id="mobile-menu-toggle" style="background:none;border:none;color:#EDE9E0;cursor:pointer;padding:8px" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav-panel">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true">
+                        <path d="M4 5h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M4 19h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+        <script>
+            const siteHeader = document.getElementById('site-header');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const headerNav = document.getElementById('header-nav');
+            const setHeaderState = () => {
+                const scrolled = window.scrollY > 20;
+                siteHeader.style.background = scrolled ? 'rgba(12, 12, 11, 0.72)' : 'transparent';
+                siteHeader.style.borderBottom = scrolled ? '1px solid rgba(164, 130, 64, 0.12)' : '1px solid transparent';
+                siteHeader.style.backdropFilter = scrolled ? 'blur(12px)' : 'none';
+                siteHeader.style.boxShadow = scrolled ? '0 6px 20px rgba(0, 0, 0, 0.08)' : 'none';
+            };
+            setHeaderState();
+            window.addEventListener('scroll', setHeaderState, { passive: true });
+
+            if (mobileMenuToggle && headerNav) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    const isOpen = headerNav.classList.contains('mobile-open');
+                    headerNav.classList.toggle('mobile-open', !isOpen);
+                    mobileMenuToggle.setAttribute('aria-expanded', String(!isOpen));
+                });
+            }
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 1023 && headerNav) {
+                    headerNav.classList.remove('mobile-open');
+                    if (mobileMenuToggle) {
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+
+            const applyMarqueeColors = () => {
+                const marqueeWords = document.querySelectorAll('.animate-marquee > span');
+                marqueeWords.forEach((word, index) => {
+                    word.style.color = index % 2 === 0 ? 'rgba(200, 168, 107, 0.72)' : 'rgba(250, 242, 229, 0.56)';
+                    word.style.opacity = '0.84';
+                    word.style.textShadow = '0 0 8px rgba(255, 255, 255, 0.03)';
+                });
+            };
+
+            window.addEventListener('load', applyMarqueeColors);
+            applyMarqueeColors();
+
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            document.querySelectorAll('a[href^="#"]').forEach((link) => {
+                link.addEventListener('click', (event) => {
+                    const id = link.getAttribute('href')?.slice(1);
+                    const target = id ? document.getElementById(id) : null;
+                    if (!target) return;
+
+                    event.preventDefault();
+                    if (prefersReducedMotion) {
+                        window.scrollTo({ top: target.offsetTop - 100, behavior: 'auto' });
+                        return;
+                    }
+
+                    const startY = window.scrollY;
+                    const targetY = Math.max(0, target.getBoundingClientRect().top + startY - 100);
+                    const distance = targetY - startY;
+                    const duration = Math.min(1200, Math.max(700, Math.abs(distance) * 0.55));
+                    let startTime = null;
+                    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+                    const step = (timestamp) => {
+                        if (!startTime) startTime = timestamp;
+                        const progress = Math.min(1, (timestamp - startTime) / duration);
+                        const eased = easeOutCubic(progress);
+                        window.scrollTo(0, startY + distance * eased);
+                        if (progress < 1) {
+                            window.requestAnimationFrame(step);
+                        }
+                    };
+
+                    window.requestAnimationFrame(step);
+                });
+            });
+        </script>
+        <!--$-->
+        <main>
+            <section style="min-height:100dvh;position:relative;display:flex;align-items:flex-end;overflow:hidden;padding-top:clamp(5.5rem, 9vw, 8rem)">
+                <div style="position:absolute;inset:0;background-image:url('asset/index.png');background-size:cover;background-position:center 30%;z-index:0"></div>
+                <div style="position:absolute;inset:0;background:linear-gradient(105deg, rgba(12,12,11,0.97) 0%, rgba(12,12,11,0.82) 45%, rgba(12,12,11,0.3) 100%);z-index:1"></div>
+                <div style="position:absolute;bottom:0;left:0;right:0;height:30%;background:linear-gradient(to top, #0C0C0B, transparent);z-index:2"></div>
+                <div style="position:relative;z-index:3;max-width:1400px;margin:0 auto;padding:0 3rem 7rem;width:100%" class="px-6 lg:px-12 pb-20 lg:pb-28">
+                    <div class="opacity-0 animate-fade-up" style="max-width:780px">
+                        <div class="section-label" style="margin-bottom:2rem">Luxury Custom Homes</div>
+                        <h1 style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(3rem, 7vw, 7rem);font-weight:300;line-height:1.05;color:#EDE9E0;margin:0 0 2rem;letter-spacing:-0.01em">
+                            Crafted for the
+                            <!-- -->
+                            <span style="font-style:italic;color:#C8A86B">Extraordinary</span>
+                        </h1>
+                        <p class="opacity-0 animate-fade-up delay-200" style="font-family:DM Sans, system-ui, sans-serif;font-size:clamp(15px, 1.5vw, 17px);line-height:1.8;color:#7A7570;max-width:480px;margin:0 0 3rem;font-weight:300">Waypoint Builders brings uncompromising craftsmanship, visionary design, and decades of expertise to every bespoke home we build.</p>
+                        <div class="opacity-0 animate-fade-up delay-400" style="display:flex;gap:1rem;flex-wrap:wrap">
+                            <a href="projects.html" class="btn-gold">
+                                Explore Our Work
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+                            <a href="about.html" class="btn-outline">Our Story</a>
+                        </div>
+                    </div>
+                    <div class="opacity-0 animate-fade-in delay-700" style="position:absolute;bottom:2.5rem;right:3rem;display:flex;flex-direction:column;align-items:center;gap:0.5rem">
+                        <span style="font-family:DM Sans, system-ui, sans-serif;font-size:9px;letter-spacing:0.35em;text-transform:uppercase;color:#3A3830;writing-mode:vertical-rl;transform:rotate(180deg)">Scroll</span>
+                        <div style="width:1px;height:60px;background:linear-gradient(to bottom, #3A3830, transparent)"></div>
+                    </div>
+                </div>
+            </section>
+            <div style="background:rgba(255, 255, 255, 0.035);border-top:1px solid rgba(255, 255, 255, 0.08);border-bottom:1px solid rgba(255, 255, 255, 0.08);padding:1.25rem 0;overflow:hidden">
+                <div class="animate-marquee" style="display:flex;gap:4rem;white-space:nowrap;width:max-content">
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.16);text-transform:capitalize">Craftsmanship</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.08);text-transform:capitalize">Precision</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.16);text-transform:capitalize">Legacy</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.08);text-transform:capitalize">Innovation</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.16);text-transform:capitalize">Excellence</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.08);text-transform:capitalize">Vision</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.16);text-transform:capitalize">Detail</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.08);text-transform:capitalize">Craftsmanship</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.16);text-transform:capitalize">Precision</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.08);text-transform:capitalize">Legacy</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.16);text-transform:capitalize">Innovation</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.08);text-transform:capitalize">Excellence</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.16);text-transform:capitalize">Vision</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.08);text-transform:capitalize">Detail</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.16);text-transform:capitalize">Craftsmanship</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.08);text-transform:capitalize">Precision</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.16);text-transform:capitalize">Legacy</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.08);text-transform:capitalize">Innovation</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.16);text-transform:capitalize">Excellence</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.08);text-transform:capitalize">Vision</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.16);text-transform:capitalize">Detail</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.08);text-transform:capitalize">Craftsmanship</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.16);text-transform:capitalize">Precision</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.08);text-transform:capitalize">Legacy</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.16);text-transform:capitalize">Innovation</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.08);text-transform:capitalize">Excellence</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.16);text-transform:capitalize">Vision</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.08);text-transform:capitalize">Detail</span>
+                </div>
+            </div>
+            <section style="background:#0C0C0B;padding:clamp(5rem, 10vw, 10rem) 3rem;text-align:center;position:relative" class="px-6 lg:px-12">
+                <div style="position:absolute;top:3rem;left:50%;transform:translateX(-50%);width:1px;height:60px;background:linear-gradient(to bottom, transparent, rgba(200, 168, 107, 0.25))"></div>
+                <div style="max-width:900px;margin:0 auto">
+                    <blockquote style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(1.8rem, 4vw, 3.5rem);font-weight:300;font-style:italic;line-height:1.35;color:#EDE9E0;margin:0 0 2.5rem;letter-spacing:0.01em">
+                        &quot;We don &#x27;t just build homes.<br/>
+                        We create the spaces where your
+                        <!-- -->
+                        <span style="color:#C8A86B">dreams begin.</span>
+                        &quot;
+                    </blockquote>
+                    <p style="font-family:DM Sans, system-ui, sans-serif;font-size:11px;letter-spacing:0.35em;text-transform:uppercase;color:rgba(164, 153, 139, 0.72);opacity:0.84">— Jackson Chavez, Founder &amp; Master Builder</p>
+                </div>
+                <div style="position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);width:1px;height:60px;background:linear-gradient(to top, transparent, rgba(200, 168, 107, 0.25))"></div>
+            </section>
+            <section style="background:#141412;border-top:1px solid rgba(200, 168, 107, 0.08);border-bottom:1px solid rgba(200, 168, 107, 0.08)">
+                <div style="max-width:1400px;margin:0 auto;padding:4rem 3rem;display:grid;grid-template-columns:repeat(2, 1fr);gap:0" class="px-6 lg:px-12 lg:grid-cols-4">
+                    <div style="padding:2.5rem 2rem;border-right:1px solid rgba(200, 168, 107, 0.08);text-align:center">
+                        <div style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(2.5rem, 4vw, 4rem);font-weight:300;color:#C8A86B;line-height:1;margin-bottom:0.5rem;letter-spacing:-0.02em">
+                            9<span style="font-size:0.45em;vertical-align:top;margin-top:0.6em;display:inline-block;margin-left:4px">yrs</span>
+                        </div>
+                        <div style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#a4998b">Years of Excellence</div>
+                    </div>
+                    <div style="padding:2.5rem 2rem;border-right:1px solid rgba(200, 168, 107, 0.08);text-align:center">
+                        <div style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(2.5rem, 4vw, 4rem);font-weight:300;color:#C8A86B;line-height:1;margin-bottom:0.5rem;letter-spacing:-0.02em">20+</div>
+                        <div style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#a4998b">Projects With Leading Builders</div>
+                    </div>
+                    <div style="padding:2.5rem 2rem;border-right:1px solid rgba(200, 168, 107, 0.08);text-align:center">
+                        <div style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(2.5rem, 4vw, 4rem);font-weight:300;color:#C8A86B;line-height:1;margin-bottom:0.5rem;letter-spacing:-0.02em">$2.4M</div>
+                        <div style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#a4998b">Project Value Built</div>
+                    </div>
+                    <div style="padding:2.5rem 2rem;border-right:none;text-align:center">
+                        <div style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(2.5rem, 4vw, 4rem);font-weight:300;color:#C8A86B;line-height:1;margin-bottom:0.5rem;letter-spacing:-0.02em">97%</div>
+                        <div style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#a4998b">Client Satisfaction</div>
+                    </div>
+                </div>
+            </section>
+              <section style="background:#0C0C0B;padding:clamp(5rem, 10vw, 9rem) 0">
+                <div style="max-width:1400px;margin:0 auto;padding:0 3rem" class="px-6 lg:px-12">
+                    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem">
+                        <div>
+                            <div class="section-label">Featured Portfolio</div>
+                            <h2 style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(2.1rem, 4vw, 3.2rem);font-weight:300;color:#EDE9E0;margin:0;line-height:1.1;letter-spacing:-0.01em">
+                                Luxury projects <span style="font-style:italic;color:#C8A86B">in the works</span>
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr;gap:1.5rem">
+                        <a href="projects.html" class="project-card-link" style="text-decoration:none;color:inherit">
+                            <div class="project-card" style="position:relative;overflow:hidden;cursor:pointer;min-height:320px">
+                                <img src="asset/sahuarita/sahuarita.png" alt="The Sonoran" class="project-img" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+                                <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(12,12,11,0.9) 0%, rgba(12,12,11,0.2) 60%, transparent 100%)"></div>
+                                <div class="project-overlay" style="position:absolute;inset:0;background:rgba(12,12,11,0.45);border:1px solid rgba(200, 168, 107, 0.2)"></div>
+                                <div style="position:absolute;bottom:0;left:0;right:0;padding:1.75rem;z-index:2">
+                                    <div style="font-family:DM Sans, system-ui, sans-serif;font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:#C8A86B;margin-bottom:0.5rem">Ruby Star Airpark</div>
+                                    <div style="font-family:Cormorant Garamond, Georgia, serif;font-size:1.5rem;font-weight:400;color:#EDE9E0;line-height:1.2;margin-bottom:0.45rem">The Sonoran</div>
+                                    <div style="font-family:DM Sans, system-ui, sans-serif;font-size:11px;color:#CFC7BE;letter-spacing:0.05em">Sahuarita, Arizona · 8,429 sq ft</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="projects.html" class="project-card-link" style="text-decoration:none;color:inherit">
+                            <div class="project-card" style="position:relative;overflow:hidden;cursor:pointer;min-height:320px">
+                                <img src="asset/sahuarita/hangar.png" alt="Dessert Sky" class="project-img" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+                                <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(12,12,11,0.9) 0%, rgba(12,12,11,0.2) 60%, transparent 100%)"></div>
+                                <div class="project-overlay" style="position:absolute;inset:0;background:rgba(12,12,11,0.45);border:1px solid rgba(200, 168, 107, 0.2)"></div>
+                                <div style="position:absolute;bottom:0;left:0;right:0;padding:1.75rem;z-index:2">
+                                    <div style="font-family:DM Sans, system-ui, sans-serif;font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:#C8A86B;margin-bottom:0.5rem">Ruby Star Airpark</div>
+                                    <div style="font-family:Cormorant Garamond, Georgia, serif;font-size:1.5rem;font-weight:400;color:#EDE9E0;line-height:1.2;margin-bottom:0.45rem">Dessert Sky</div>
+                                    <div style="font-family:DM Sans, system-ui, sans-serif;font-size:11px;color:#CFC7BE;letter-spacing:0.05em">Sahuarita, Arizona · 3,100 sq ft</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <section style="background:#0C0C0B;padding:100px 0;border-top:1px solid rgba(200, 168, 107, 0.08);position:relative;overflow:hidden">
+                <div style="position:absolute;inset:0;background-image:url('asset/ready_to_build.png');background-size:cover;background-position:center;opacity:0.18;filter:grayscale(100%) contrast(1.08);mix-blend-mode:screen"></div>
+                <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(12,12,11,0.9) 0%, rgba(12,12,11,0.68) 45%, rgba(12,12,11,0.84) 100%)"></div>
+                <div style="position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:0 3rem;display:flex;flex-direction:column;align-items:center;text-align:center" class="px-6 lg:px-12">
+                    <div class="section-label" style="justify-content:center">Your Vision Awaits</div>
+                    <a href="contact.html" style="display:inline-block;text-decoration:none;color:inherit">
+                        <h2 style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(2.5rem, 5vw, 5.5rem);font-weight:300;color:#EDE9E0;margin:0 0 2rem;line-height:1.05;letter-spacing:-0.01em;max-width:700px">
+                            Ready to Build Something
+                            <!-- -->
+                            <span style="font-style:italic;color:#C8A86B">Extraordinary?</span>
+                        </h2>
+                    </a>
+                    <p style="font-family:DM Sans, system-ui, sans-serif;font-size:16px;line-height:1.8;color:#5A5550;max-width:480px;margin:0 0 3.5rem;font-weight:300">Begin with a private consultation. We 'll listen to your vision, walk your site, and outline a path to the home you 've always imagined.</p>
+                    <a href="contact.html" style="font-size:12px;padding:1.1rem 2.5rem" class="btn-gold">
+                        Begin Your Build
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </section>
+            </section>          
+        </main>
+        <script>
+            (function(t) {
+                let s;
+                try {
+                    s = JSON.parse(sessionStorage.getItem(t.storageKey) || "{}")
+                } catch (e) {
+                    console.error(e);
+                    return
+                }
+                const c = t.key || window.history.state?.__TSR_key
+                  , r = c ? s[c] : void 0;
+                if (t.shouldScrollRestoration && r && typeof r == "object" && Object.keys(r).length > 0) {
+                    for (const e in r) {
+                        const o = r[e];
+                        if (!o || typeof o != "object")
+                            continue;
+                        const l = o.scrollX
+                          , i = o.scrollY;
+                        if (!(!Number.isFinite(l) || !Number.isFinite(i))) {
+                            if (e === "window")
+                                window.scrollTo({
+                                    top: i,
+                                    left: l,
+                                    behavior: t.behavior
+                                });
+                            else if (e) {
+                                let n;
+                                try {
+                                    n = document.querySelector(e)
+                                } catch {
+                                    continue
+                                }
+                                n && (n.scrollLeft = l,
+                                n.scrollTop = i)
+                            }
+                        }
+                    }
+                    return
+                }
+                const a = window.location.hash.split("#", 2)[1];
+                if (a) {
+                    const e = window.history.state?.__hashScrollIntoViewOptions ?? !0;
+                    if (e) {
+                        const o = document.getElementById(a);
+                        o && o.scrollIntoView(e)
+                    }
+                    return
+                }
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: t.behavior
+                })
+            }
+            )({
+                "storageKey": "tsr-scroll-restoration-v1_3",
+                "shouldScrollRestoration": true
+            });
+            document.currentScript.remove()
+        </script>
+        <!--/$-->
+        <footer style="background:#0C0C0B;border-top:1px solid rgba(200, 168, 107, 0.28);padding:5rem 0 2.5rem;box-shadow:0 -10px 30px rgba(200, 168, 107, 0.06)">
+            <div style="max-width:1400px;margin:0 auto;padding:0 3rem" class="px-6 lg:px-12">
+                <div style="display:grid;grid-template-columns:minmax(280px, 1.1fr) minmax(280px, 0.9fr);gap:2rem;align-items:center;margin-bottom:3rem">
+                    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.85rem;padding:1rem 0">
+                        <img src="asset/favicon.png" alt="Waypoint Builders favicon" style="width:180px;height:180px;display:block;object-fit:contain" />
+                        <div>
+                            <p style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;line-height:1.7;color:#5A5550;margin:0">Building refined homes with lasting craftsmanship.</p>
+                            <p style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;line-height:1.7;color:#5A5550;margin:0.25rem 0 0">Serving Arizona</p>
+                        </div>
+                    </div>
+                    <div style="padding:1.4rem 1.5rem;border:1px solid rgba(200, 168, 107, 0.16);background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(200, 168, 107, 0.04));box-shadow:inset 0 1px 0 rgba(255,255,255,0.03)">
+                        <div style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:#C8A86B;margin-bottom:1rem;font-weight:500">Contact</div>
+                        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.8rem">
+                            <li style="display:flex;align-items:center;gap:0.7rem"><span style="width:16px;height:16px;color:#C8A86B;display:inline-flex;align-items:center;justify-content:center">☎</span><a href="tel:5203508780" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;text-decoration:none;transition:color 0.3s ease;letter-spacing:0.02em">520-350-8780</a></li>
+                            <li style="display:flex;align-items:center;gap:0.7rem"><span style="width:16px;height:16px;color:#C8A86B;display:inline-flex;align-items:center;justify-content:center">✉</span><a href="mailto:hello@thewaypointbuilders.com" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;text-decoration:none;transition:color 0.3s ease;letter-spacing:0.02em">hello@thewaypointbuilders.com</a></li>
+                            <li style="margin-top:0.35rem">
+                                <a href="contact.html" style="display:inline-block;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C8A86B;text-decoration:none;padding-bottom:2px;border-bottom:1px solid rgba(200, 168, 107, 0.3)">Request a Consultation</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="height:1px;background:rgba(200, 168, 107, 0.08);margin-bottom:1.5rem"></div>
+                <div style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;justify-content:space-between">
+                    <div style="display:flex;flex-wrap:wrap;gap:0.9rem;align-items:center">
+                        <p style="font-family:DM Sans, system-ui, sans-serif;font-size:11px;letter-spacing:0.1em;color:#3A3830;margin:0">© 2026 Waypoint Builders LLC. All rights reserved.</p>
+                        <span style="font-family:DM Sans, system-ui, sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">ROC License 366594</span>
+                    </div>
+                    <p style="font-family:Cormorant Garamond, Georgia, serif;font-size:13px;font-style:italic;color:#3A3830;letter-spacing:0.05em;margin:0">Building Beyond Expectations</p>
+                </div>
+            </div>
+        </footer>
+        <script class="$tsr" id="$tsr-stream-barrier">
+            (self.$R = self.$R || {})["tsr"] = [];
+            self.$_TSR = {
+                h() {
+                    this.hydrated = !0,
+                    this.c()
+                },
+                e() {
+                    this.streamEnded = !0,
+                    this.c()
+                },
+                c() {
+                    this.hydrated && this.streamEnded && (delete self.$_TSR,
+                    delete self.$R.tsr)
+                },
+                p(e) {
+                    this.initialized ? e() : this.buffer.push(e)
+                },
+                buffer: []
+            };
+            $_TSR.router = ($R => $R[0] = {
+                manifest: $R[1] = {
+                    routes: $R[2] = {
+                        __root__: $R[3] = {
+                            preloads: $R[4] = ["/assets/index-Cq7eXxEX.js"],
+                            assets: $R[5] = [$R[6] = {
+                                tag: "link",
+                                attrs: $R[7] = {
+                                    rel: "stylesheet",
+                                    href: "/assets/index-BVwu91tL.css",
+                                    type: "text/css"
+                                }
+                            }, $R[8] = {
+                                tag: "script",
+                                attrs: $R[9] = {
+                                    type: "module",
+                                    async: !0
+                                },
+                                children: "import(\"/assets/index-Cq7eXxEX.js\")"
+                            }]
+                        }
+                    }
+                },
+                matches: $R[10] = [$R[11] = {
+                    i: "__root__ ",
+                    u: 1782583211876,
+                    s: "success",
+                    ssr: !0
+                }, $R[12] = {
+                    i: "  ",
+                    u: 1782583211876,
+                    s: "success",
+                    ssr: !0
+                }],
+                lastMatchId: "  "
+            })($R["tsr"]);
+            $_TSR.e();
+            document.currentScript.remove()
+        </script>
+        <script type="module" async="">
+            import("/assets/index-Cq7eXxEX.js")
+        </script>
+    </body>
+</html>

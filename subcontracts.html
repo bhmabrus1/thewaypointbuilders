@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" data-precedence="default" />
+        <link rel="stylesheet" href="styles.css" type="text/css" data-precedence="default" />
+        <title>Subcontractor Registration — Waypoint Builders LLC</title>
+        <meta name="description" content="Register as a subcontractor with Waypoint Builders LLC. Join our network of quality trade professionals." />
+        <link rel="icon" type="image/png" href="asset/favicon.png" />
+        <link rel="shortcut icon" href="asset/favicon.png" />
+        <style>
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+            .animate-fade-up {
+                animation: fadeUp 0.8s ease-out forwards;
+                opacity: 0;
+            }
+
+            .animate-fade-in {
+                animation: fadeIn 1s ease-out forwards;
+                opacity: 0;
+            }
+
+            .delay-200 {
+                animation-delay: 0.2s;
+            }
+
+            .delay-400 {
+                animation-delay: 0.4s;
+            }
+
+            .delay-600 {
+                animation-delay: 0.6s;
+            }
+
+            .delay-800 {
+                animation-delay: 0.8s;
+            }
+
+            .ownership-buttons {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 0.8rem;
+                margin-top: 0.6rem;
+            }
+
+            .ownership-button {
+                padding: 0.9rem 1rem;
+                border: 1px solid rgba(200, 168, 107, 0.3);
+                background: rgba(255,255,255,0.04);
+                color: #EDE9E0;
+                cursor: pointer;
+                border-radius: 12px;
+                font-family: DM Sans, system-ui, sans-serif;
+                font-size: 12px;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                transition: all 0.3s ease;
+            }
+
+            .ownership-button:hover {
+                border-color: rgba(229, 199, 122, 0.6);
+                background: rgba(229, 199, 122, 0.1);
+            }
+
+            .ownership-button.selected {
+                background: rgba(229, 199, 122, 0.2);
+                border-color: rgba(229, 199, 122, 0.8);
+                color: #E5C77A;
+            }
+
+            .form-section {
+                margin-bottom: 2rem;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid rgba(200, 168, 107, 0.18);
+                box-shadow: 0 8px 24px rgba(229, 199, 122, 0.04);
+            }
+
+            .experience-layout {
+                display: flex;
+                flex-direction: column;
+                gap: 1.2rem;
+                align-items: stretch;
+                margin-top: 1rem;
+                width: 100%;
+            }
+
+            .experience-copy {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                padding-top: 0.2rem;
+                width: 100%;
+            }
+
+            .experience-copy p,
+            .experience-copy li {
+                font-family: DM Sans, system-ui, sans-serif;
+                font-size: 13px;
+                line-height: 1.8;
+                color: #8A837C;
+            }
+
+            .experience-copy ul {
+                display: grid;
+                gap: 0.6rem;
+                padding-left: 1rem;
+                margin: 0;
+            }
+
+            .experience-visual {
+                position: relative;
+                min-height: auto;
+                border-radius: 24px;
+                overflow: hidden;
+                border: 1px solid rgba(229, 199, 122, 0.2);
+                box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+                width: 100%;
+            }
+
+            .experience-visual img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: brightness(0.72) saturate(0.88);
+            }
+
+            .experience-overlay {
+                position: absolute;
+                inset: 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.9rem;
+                padding: 1.1rem;
+                border-radius: 18px;
+                background: linear-gradient(135deg, rgba(7, 7, 6, 0.82) 0%, rgba(20, 18, 16, 0.74) 100%);
+                border: 1px solid rgba(229, 199, 122, 0.18);
+                backdrop-filter: blur(14px);
+                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+            }
+
+            .experience-overlay-header {
+                font-family: DM Sans, system-ui, sans-serif;
+                font-size: 11px;
+                letter-spacing: 0.24em;
+                text-transform: uppercase;
+                color: #C8A86B;
+            }
+
+            .trades-grid {
+                display: grid;
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+                gap: 0.7rem;
+                max-height: 520px;
+                overflow-y: auto;
+                padding-right: 0.3rem;
+                background: transparent;
+                border: 0;
+                border-radius: 0;
+                align-content: start;
+            }
+
+            .trade-checkbox {
+                display: flex;
+                align-items: flex-start;
+                gap: 0.55rem;
+                padding: 0.6rem 0.65rem;
+                background: transparent;
+                border: 1px solid transparent;
+                border-radius: 10px;
+            }
+
+            .trade-checkbox input[type="checkbox"] {
+                cursor: pointer;
+                accent-color: #C8A86B;
+                margin-top: 0.2rem;
+            }
+
+            .trade-checkbox label {
+                cursor: pointer;
+                font-family: DM Sans, system-ui, sans-serif;
+                font-size: 11px;
+                line-height: 1.45;
+                color: #F7F2E8;
+                margin: 0;
+            }
+
+            @media (max-width: 1300px) {
+                .trades-grid {
+                    grid-template-columns: repeat(4, minmax(0, 1fr));
+                }
+            }
+
+            @media (max-width: 1100px) {
+                .trades-grid {
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                }
+            }
+
+            @media (max-width: 900px) {
+                .experience-visual {
+                    min-height: auto;
+                }
+
+                .trades-grid {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+            }
+
+            @media (max-width: 640px) {
+                .trades-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .reference-box {
+                background: rgba(255,255,255,0.04);
+                border: 1px solid rgba(200, 168, 107, 0.2);
+                padding: 1.5rem;
+                border-radius: 12px;
+                margin-bottom: 1.5rem;
+            }
+
+            .reference-title {
+                font-family: DM Sans, system-ui, sans-serif;
+                font-size: 13px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: #C8A86B;
+                margin-bottom: 1rem;
+                font-weight: 500;
+            }
+
+            .reference-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-family: Cormorant Garamond, Georgia, serif;
+                font-size: 28px;
+                font-weight: 400;
+                letter-spacing: -0.01em;
+                color: #EDE9E0;
+                margin-bottom: 1.5rem;
+                padding-bottom: 1rem;
+                border-bottom: 2px solid rgba(200, 168, 107, 0.38);
+                box-shadow: 0 2px 10px rgba(229, 199, 122, 0.08);
+            }
+            }
+        </style>
+    </head>
+    <body style="background: #0c0c0b; color: #EDE9E0;">
+        <header id="site-header" style="position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease, box-shadow 0.5s ease;background:transparent;backdrop-filter:none;border-bottom:1px solid transparent;box-shadow:none">
+            <div style="max-width:1400px;margin:0 auto;padding:0 3rem;display:flex;align-items:center;justify-content:space-between;height:92px" class="px-6 lg:px-12">
+                <a href="index.html" style="display:flex;align-items:center;text-decoration:none;padding-top:10px" aria-current="page">
+                    <img src="asset/logo.png" alt="Waypoint Builders logo" style="height:clamp(72px, 8vw, 140px);width:auto;display:block" />
+                </a>
+                <nav id="header-nav" class="header-nav" style="align-items:center;gap:1rem">
+                    <a class="header-nav-link" href="index.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">Home</a>
+                    <a class="header-nav-link" href="about.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">About</a>
+                    <a class="header-nav-link" href="services.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">Services</a>
+                    <a class="header-nav-link" href="projects.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">Projects</a>
+                    <a class="header-nav-link" href="contact.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">Contact</a>
+                    <a class="header-nav-link active" href="subcontracts.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#A48240;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid rgba(164, 130, 64, 0.5)" data-status="active" aria-current="page">Subcontracting</a>
+                </nav>
+                <div style="display:flex;align-items:center;gap:0.75rem">
+                    <span style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;font-weight:500;color:#C8A86B;padding:0.5rem 0.75rem;border:1px solid rgba(200, 168, 107, 0.28);border-radius:999px;background:rgba(255,255,255,0.03);box-shadow:inset 0 1px 0 rgba(255,255,255,0.03)">ROC 366594</span>
+                    <a href="contact.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;text-decoration:none;color:#E5C77A;background:rgba(138, 104, 43, 0.22);border:1px solid rgba(164, 130, 64, 0.3);padding:9px 18px;transition:border-color 0.3s ease, background 0.3s ease, color 0.3s ease" class="header-cta">Begin Your Build</a>
+                </div>
+                <button class="header-menu-toggle" id="mobile-menu-toggle" style="background:none;border:none;color:#EDE9E0;cursor:pointer;padding:8px" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav-panel">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true">
+                        <path d="M4 5h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M4 19h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <script>
+            const siteHeader = document.getElementById('site-header');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const headerNav = document.getElementById('header-nav');
+            const setHeaderState = () => {
+                const scrolled = window.scrollY > 20;
+                siteHeader.style.background = scrolled ? 'rgba(12, 12, 11, 0.72)' : 'transparent';
+                siteHeader.style.borderBottom = scrolled ? '1px solid rgba(164, 130, 64, 0.12)' : '1px solid transparent';
+                siteHeader.style.backdropFilter = scrolled ? 'blur(12px)' : 'none';
+                siteHeader.style.boxShadow = scrolled ? '0 6px 20px rgba(0, 0, 0, 0.08)' : 'none';
+            };
+            setHeaderState();
+            window.addEventListener('scroll', setHeaderState, { passive: true });
+
+            if (mobileMenuToggle && headerNav) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    const isOpen = headerNav.classList.contains('mobile-open');
+                    headerNav.classList.toggle('mobile-open', !isOpen);
+                    mobileMenuToggle.setAttribute('aria-expanded', String(!isOpen));
+                });
+            }
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 1023 && headerNav) {
+                    headerNav.classList.remove('mobile-open');
+                    if (mobileMenuToggle) {
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            document.querySelectorAll('a[href^="#"]').forEach((link) => {
+                link.addEventListener('click', (event) => {
+                    const id = link.getAttribute('href')?.slice(1);
+                    const target = id ? document.getElementById(id) : null;
+                    if (!target) return;
+
+                    event.preventDefault();
+                    if (prefersReducedMotion) {
+                        window.scrollTo({ top: target.offsetTop - 100, behavior: 'auto' });
+                        return;
+                    }
+
+                    const startY = window.scrollY;
+                    const targetY = Math.max(0, target.getBoundingClientRect().top + startY - 100);
+                    const distance = targetY - startY;
+                    const duration = Math.min(1600, Math.max(900, Math.abs(distance) * 0.7));
+                    let startTime = null;
+                    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+                    const step = (timestamp) => {
+                        if (!startTime) startTime = timestamp;
+                        const progress = Math.min(1, (timestamp - startTime) / duration);
+                        const eased = easeOutCubic(progress);
+                        window.scrollTo(0, startY + distance * eased);
+                        if (progress < 1) {
+                            window.requestAnimationFrame(step);
+                        }
+                    };
+
+                    window.requestAnimationFrame(step);
+                });
+            });
+        </script>
+
+        <main>
+            <section style="min-height:100dvh;position:relative;display:flex;align-items:flex-end;overflow:hidden">
+                <div style="position:absolute;inset:0;background-image:url('asset/subs.png');background-size:cover;background-position:center 35%;z-index:0;opacity:0.75;filter:saturate(0.9) contrast(1)"></div>
+                <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(12, 12, 11, 0.75) 0%, rgba(30, 25, 20, 0.8) 100%);z-index:1"></div>
+                <div style="position:absolute;bottom:0;left:0;right:0;height:30%;background:linear-gradient(to top, #0C0C0B, transparent);z-index:2"></div>
+                <div style="position:relative;z-index:3;max-width:1400px;margin:0 auto;padding:6rem 3rem 7rem;width:100%" class="px-6 lg:px-12 pb-20 lg:pb-28">
+                    <div style="max-width:900px">
+                        <div class="section-label animate-fade-up" style="margin-bottom:2rem">Partner With Us</div>
+                        <h1 style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(3rem, 7vw, 6rem);font-weight:300;line-height:1.05;color:#EDE9E0;margin:0 0 1.5rem;letter-spacing:-0.01em" class="animate-fade-up delay-200">
+                            Register as a
+                            <span style="font-style:italic;color:#C8A86B">Subcontractor</span>
+                        </h1>
+                        <p style="font-family:DM Sans, system-ui, sans-serif;font-size:clamp(15px, 1.5vw, 17px);line-height:1.8;color:#8A837C;max-width:700px;margin:0;font-weight:300" class="animate-fade-up delay-400">
+                            Join our network of trusted trade professionals. Share your information and we'll review your qualifications to see if Waypoint Builders is the right fit for your services.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section style="background:#0C0C0B;padding:5rem 3rem">
+                <div style="max-width:1400px;margin:0 auto" class="animate-fade-in">
+                    <form id="subcontractor-form" style="display:grid;gap:2rem">
+                        <!-- Section 1: Basic Information -->
+                        <div class="form-section">
+                            <div class="section-title">Section 1: Basic Information</div>
+                            
+                            <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:1.5rem">
+                                <span>Company Name <span style="color:#E5C77A">*</span></span>
+                                <input type="text" name="companyName" required placeholder="Enter your company name" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                            </label>
+
+                            <div style="margin-bottom:1.5rem">
+                                <div style="font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:0.6rem"><span>Ownership Type <span style="color:#E5C77A">*</span></span></div>
+                                <div class="ownership-buttons">
+                                    <button type="button" class="ownership-button" data-ownership="Partnership">Partnership</button>
+                                    <button type="button" class="ownership-button" data-ownership="Corporation">Corporation</button>
+                                    <button type="button" class="ownership-button" data-ownership="LLC">LLC</button>
+                                    <button type="button" class="ownership-button" data-ownership="Sole Proprietor">Sole Proprietor</button>
+                                </div>
+                                <input type="hidden" name="ownershipType" id="ownershipType" required />
+                            </div>
+
+                            <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:1.5rem">
+                                <span>Year Started / Incorporated / Organized <span style="color:#E5C77A">*</span></span>
+                                <input type="number" name="yearStarted" min="1900" max="2099" required placeholder="e.g., 2015" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                            </label>
+
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem">
+                                <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                    <span>Address <span style="color:#E5C77A">*</span></span>
+                                    <input type="text" name="address" required placeholder="Street address" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                </label>
+                            </div>
+
+                            <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem;margin-bottom:1.5rem">
+                                <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                    <span>City <span style="color:#E5C77A">*</span></span>
+                                    <input type="text" name="city" required placeholder="City" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                </label>
+                                <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                    <span>State <span style="color:#E5C77A">*</span></span>
+                                    <input type="text" name="state" required placeholder="State" maxlength="2" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif;text-transform:uppercase" />
+                                </label>
+                                <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                    <span>Zip Code <span style="color:#E5C77A">*</span></span>
+                                    <input type="text" name="zipCode" required placeholder="12345" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                </label>
+                            </div>
+
+                            <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:1.5rem">
+                                <span>Federal ID / SS# <span style="color:#E5C77A">*</span></span>
+                                <input type="text" name="federalId" required placeholder="XX-XXXXXXX" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                            </label>
+
+                            <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:1.5rem">
+                                <span>Owner's Name <span style="color:#E5C77A">*</span></span>
+                                <input type="text" name="ownerName" required placeholder="Full name" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                            </label>
+
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem">
+                                <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                    <span>Contact First Name <span style="color:#E5C77A">*</span></span>
+                                    <input type="text" name="contactFirstName" required placeholder="First name" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                </label>
+                                <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                    <span>Contact Last Name <span style="color:#E5C77A">*</span></span>
+                                    <input type="text" name="contactLastName" required placeholder="Last name" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                </label>
+                            </div>
+
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem">
+                                <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                    <span>Phone Number <span style="color:#E5C77A">*</span></span>
+                                    <input type="tel" name="phoneNumber" required placeholder="(555) 555-5555" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                </label>
+                                <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                    <span>Email <span style="color:#E5C77A">*</span></span>
+                                    <input type="email" name="email" required placeholder="you@email.com" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                </label>
+                            </div>
+
+                            <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:1.5rem">
+                                <span>License Number <span style="color:#E5C77A">*</span></span>
+                                <input type="text" name="licenseNumber" required placeholder="License number" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                            </label>
+                        </div>
+
+                        <!-- Section 2: Experience -->
+                        <div class="form-section">
+                            <div class="section-title">Section 2: Experience</div>
+                            
+                            <div class="experience-layout">
+                                <div class="experience-copy">
+                                    <p>Select the trade categories your company is licensed and prepared to perform. The list is arranged to make qualification review feel more deliberate and easier to scan.</p>
+                                    <ul>
+                                        <li>Choose the licensing categories that match your current scope.</li>
+                                        <li>Use the overlay panel to review the list without losing focus on the form.</li>
+                                        <li>Only select the trades you can confidently deliver.</li>
+                                    </ul>
+                                </div>
+                                <div class="experience-visual" style="min-height:auto;padding:1.4rem;display:flex;align-items:flex-start;background:linear-gradient(135deg, rgba(255,255,255,0.06), rgba(200, 168, 107, 0.08));border:1px solid rgba(229, 199, 122, 0.2);box-shadow:none">
+                                    <div style="display:grid;gap:0.8rem;width:100%">
+                                        <div class="experience-overlay-header">Licensing &amp; Trade Selection</div>
+                                        <p style="margin:0;font-family:DM Sans, system-ui, sans-serif;font-size:13px;line-height:1.7;color:#F7F2E8">Choose only the trades your company is actively licensed and ready to perform.</p>
+                                        <ul style="margin:0;padding-left:1rem;display:grid;gap:0.45rem;color:#D7C9A4;font-family:DM Sans, system-ui, sans-serif;font-size:12px;line-height:1.6">
+                                            <li>Review the licensing categories before submitting.</li>
+                                            <li>Keep the list focused on the work you can deliver.</li>
+                                            <li>Use this section to confirm your current scope.</li>
+                                        </ul>
+                                        <div class="trades-grid">
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-0" name="trades" value="R-1 Acoustical Systems"><label for="trade-0">R-1 Acoustical Systems</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-1" name="trades" value="R-2 Excavating, Grading and Oil Surfacing"><label for="trade-1">R-2 Excavating, Grading and Oil Surfacing</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-2" name="trades" value="R-3 Awnings, Canopies, Carports and Patio Covers"><label for="trade-2">R-3 Awnings, Canopies, Carports and Patio Covers</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-3" name="trades" value="R-4 Boilers, Including Solar"><label for="trade-3">R-4 Boilers, Including Solar</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-4" name="trades" value="R-6 Swimming Pool Service and Repair"><label for="trade-4">R-6 Swimming Pool Service and Repair</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-5" name="trades" value="R-7 Carpentry"><label for="trade-5">R-7 Carpentry</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-6" name="trades" value="R-8 Floor Covering"><label for="trade-6">R-8 Floor Covering</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-7" name="trades" value="R-9 Concrete"><label for="trade-7">R-9 Concrete</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-8" name="trades" value="R-10 Drywall"><label for="trade-8">R-10 Drywall</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-9" name="trades" value="R-11 Electrical"><label for="trade-9">R-11 Electrical</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-10" name="trades" value="R-12 Elevators"><label for="trade-10">R-12 Elevators</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-11" name="trades" value="R-13 Asphalt Paving"><label for="trade-11">R-13 Asphalt Paving</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-12" name="trades" value="R-14 Fencing"><label for="trade-12">R-14 Fencing</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-13" name="trades" value="R-15 Blasting"><label for="trade-13">R-15 Blasting</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-14" name="trades" value="R-16 Fire Protection Systems"><label for="trade-14">R-16 Fire Protection Systems</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-15" name="trades" value="R-17 Structural Steel and Aluminum"><label for="trade-15">R-17 Structural Steel and Aluminum</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-16" name="trades" value="R-21 Hardscaping and Irrigation Systems"><label for="trade-16">R-21 Hardscaping and Irrigation Systems</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-17" name="trades" value="R-22 House Moving"><label for="trade-17">R-22 House Moving</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-18" name="trades" value="R-24 Ornamental Metals"><label for="trade-18">R-24 Ornamental Metals</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-19" name="trades" value="R-31 Masonry"><label for="trade-19">R-31 Masonry</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-20" name="trades" value="R-34 Painting and Wall Covering"><label for="trade-20">R-34 Painting and Wall Covering</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-21" name="trades" value="R-36 Plastering"><label for="trade-21">R-36 Plastering</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-22" name="trades" value="R-37 Plumbing, Including Solar"><label for="trade-22">R-37 Plumbing, Including Solar</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-23" name="trades" value="R-37R Plumbing (and listed R‑37R subclasses)"><label for="trade-23">R-37R Plumbing (and listed R‑37R subclasses)</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-24" name="trades" value="R-39 Air Conditioning and Refrigeration, Including Solar"><label for="trade-24">R-39 Air Conditioning and Refrigeration, Including Solar</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-25" name="trades" value="R-39R Air Conditioning and Refrigeration (and related subclasses)"><label for="trade-25">R-39R Air Conditioning and Refrigeration (and related subclasses)</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-26" name="trades" value="R-40 Insulation"><label for="trade-26">R-40 Insulation</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-27" name="trades" value="R-41 Septic Tanks and Systems"><label for="trade-27">R-41 Septic Tanks and Systems</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-28" name="trades" value="R-42 Roofing"><label for="trade-28">R-42 Roofing</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-29" name="trades" value="R-45 Sheet Metal"><label for="trade-29">R-45 Sheet Metal</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-30" name="trades" value="R-48 Ceramic, Plastic and Metal Tile"><label for="trade-30">R-48 Ceramic, Plastic and Metal Tile</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-31" name="trades" value="R-53 Drilling"><label for="trade-31">R-53 Drilling</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-32" name="trades" value="R-54 Water Conditioning Equipment"><label for="trade-32">R-54 Water Conditioning Equipment</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-33" name="trades" value="R-56 Welding"><label for="trade-33">R-56 Welding</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-34" name="trades" value="R-57 Wrecking"><label for="trade-34">R-57 Wrecking</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-35" name="trades" value="R-60 Finish Carpentry"><label for="trade-35">R-60 Finish Carpentry</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-36" name="trades" value="R-61 Carpentry, Remodeling and Repairs"><label for="trade-36">R-61 Carpentry, Remodeling and Repairs</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-37" name="trades" value="R-62 Minor Home Improvements"><label for="trade-37">R-62 Minor Home Improvements</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-38" name="trades" value="R-65 Glazing"><label for="trade-38">R-65 Glazing</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-39" name="trades" value="R-67 Low Voltage Communication Systems"><label for="trade-39">R-67 Low Voltage Communication Systems</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-40" name="trades" value="R-70 Reinforcing Bar and Wire Mesh."><label for="trade-40">R-70 Reinforcing Bar and Wire Mesh.</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-41" name="trades" value="CR-1 Acoustical Systems"><label for="trade-41">CR-1 Acoustical Systems</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-42" name="trades" value="CR-2 Excavating, Grading and Oil Surfacing"><label for="trade-42">CR-2 Excavating, Grading and Oil Surfacing</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-43" name="trades" value="CR-3 Awnings, Canopies, Carports and Patio Covers"><label for="trade-43">CR-3 Awnings, Canopies, Carports and Patio Covers</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-44" name="trades" value="CR-4 Boilers, Steamfitting and Process Piping"><label for="trade-44">CR-4 Boilers, Steamfitting and Process Piping</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-45" name="trades" value="CR-6 Swimming Pool Service and Repair"><label for="trade-45">CR-6 Swimming Pool Service and Repair</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-46" name="trades" value="CR-7 Carpentry"><label for="trade-46">CR-7 Carpentry</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-47" name="trades" value="CR-8 Floor Covering"><label for="trade-47">CR-8 Floor Covering</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-48" name="trades" value="CR-9 Concrete"><label for="trade-48">CR-9 Concrete</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-49" name="trades" value="CR-10 Drywall"><label for="trade-49">CR-10 Drywall</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-50" name="trades" value="CR-11 Electrical"><label for="trade-50">CR-11 Electrical</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-51" name="trades" value="CR-12 Elevators"><label for="trade-51">CR-12 Elevators</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-52" name="trades" value="CR-14 Fencing"><label for="trade-52">CR-14 Fencing</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-53" name="trades" value="CR-15 Blasting"><label for="trade-53">CR-15 Blasting</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-54" name="trades" value="CR-16 Fire Protection Systems"><label for="trade-54">CR-16 Fire Protection Systems</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-55" name="trades" value="CR-17 Steel and Aluminum Erection"><label for="trade-55">CR-17 Steel and Aluminum Erection</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-56" name="trades" value="CR-21 Hardscaping and Irrigation Systems"><label for="trade-56">CR-21 Hardscaping and Irrigation Systems</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-57" name="trades" value="CR-24 Ornamental Metals"><label for="trade-57">CR-24 Ornamental Metals</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-58" name="trades" value="CR-31 Masonry"><label for="trade-58">CR-31 Masonry</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-59" name="trades" value="CR-34 Painting and Wall Covering"><label for="trade-59">CR-34 Painting and Wall Covering</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-60" name="trades" value="CR-36 Plastering"><label for="trade-60">CR-36 Plastering</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-61" name="trades" value="CR-37 Plumbing"><label for="trade-61">CR-37 Plumbing</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-62" name="trades" value="CR-39 Air Conditioning and Refrigeration"><label for="trade-62">CR-39 Air Conditioning and Refrigeration</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-63" name="trades" value="CR-40 Insulation"><label for="trade-63">CR-40 Insulation</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-64" name="trades" value="CR-41 Septic Tanks and Systems"><label for="trade-64">CR-41 Septic Tanks and Systems</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-65" name="trades" value="CR-42 Roofing"><label for="trade-65">CR-42 Roofing</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-66" name="trades" value="CR-45 Sheet Metal"><label for="trade-66">CR-45 Sheet Metal</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-67" name="trades" value="CR-48 Ceramic, Plastic and Metal Tile"><label for="trade-67">CR-48 Ceramic, Plastic and Metal Tile</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-68" name="trades" value="CR-53 Water Well Drilling"><label for="trade-68">CR-53 Water Well Drilling</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-69" name="trades" value="CR-54 Water Conditioning Equipment"><label for="trade-69">CR-54 Water Conditioning Equipment</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-70" name="trades" value="CR-56 Welding"><label for="trade-70">CR-56 Welding</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-71" name="trades" value="CR-57 Wrecking"><label for="trade-71">CR-57 Wrecking</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-72" name="trades" value="CR-58 Comfort Heating, Ventilating, Evaporative Cooling"><label for="trade-72">CR-58 Comfort Heating, Ventilating, Evaporative Cooling</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-73" name="trades" value="CR-60 Finish Carpentry"><label for="trade-73">CR-60 Finish Carpentry</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-74" name="trades" value="CR-61 Carpentry, Remodeling and Repairs"><label for="trade-74">CR-61 Carpentry, Remodeling and Repairs</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-75" name="trades" value="CR-65 Glazing"><label for="trade-75">CR-65 Glazing</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-76" name="trades" value="CR-66 Seal Coating"><label for="trade-76">CR-66 Seal Coating</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-77" name="trades" value="CR-67 Low Voltage Communication Systems"><label for="trade-77">CR-67 Low Voltage Communication Systems</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-78" name="trades" value="CR-69 Asphalt Paving"><label for="trade-78">CR-69 Asphalt Paving</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-79" name="trades" value="CR-70 Reinforcing Bar and Wire Mesh"><label for="trade-79">CR-70 Reinforcing Bar and Wire Mesh</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-80" name="trades" value="CR-74 Boilers, Steamfitting and Process Piping, Including Solar"><label for="trade-80">CR-74 Boilers, Steamfitting and Process Piping, Including Solar</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-81" name="trades" value="CR-77 Plumbing Including Solar"><label for="trade-81">CR-77 Plumbing Including Solar</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-82" name="trades" value="CR-78 Solar Plumbing, Liquid Systems Only"><label for="trade-82">CR-78 Solar Plumbing, Liquid Systems Only</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-83" name="trades" value="CR-79 Air Conditioning and Refrigeration, Including Solar"><label for="trade-83">CR-79 Air Conditioning and Refrigeration, Including Solar</label></div>
+                                    <div class="trade-checkbox"><input type="checkbox" id="trade-84" name="trades" value="CR-80 Sewers, Drains and Pipe Laying"><label for="trade-84">CR-80 Sewers, Drains and Pipe Laying</label></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 3: Trade References -->
+                        <div class="form-section">
+                            <div class="section-title">Section 3: Trade References</div>
+                            <p style="font-family:DM Sans, system-ui, sans-serif;font-size:12px;color:#7A7570;margin-bottom:2rem">Please provide 4 trade references for your company. Include contact name, phone number, and the trades they can reference.</p>
+
+                            <!-- Reference 1 -->
+                            <div class="reference-box">
+                                <div class="reference-title">Reference 1</div>
+                                <div class="reference-grid">
+                                    <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                        <span>Contact Name <span style="color:#E5C77A">*</span></span>
+                                        <input type="text" name="ref1Name" required placeholder="Full name" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                    </label>
+                                    <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                        <span>Phone Number <span style="color:#E5C77A">*</span></span>
+                                        <input type="tel" name="ref1Phone" required placeholder="(555) 555-5555" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                    </label>
+                                    <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                        <span>Trade Performed <span style="color:#E5C77A">*</span></span>
+                                        <input type="text" name="ref1Trade" required placeholder="e.g., Electrical" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Reference 2 -->
+                            <div class="reference-box">
+                                <div class="reference-title">Reference 2</div>
+                                <div class="reference-grid">
+                                    <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                        <span>Contact Name <span style="color:#E5C77A">*</span></span>
+                                        <input type="text" name="ref2Name" required placeholder="Full name" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                    </label>
+                                    <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                        <span>Phone Number <span style="color:#E5C77A">*</span></span>
+                                        <input type="tel" name="ref2Phone" required placeholder="(555) 555-5555" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                    </label>
+                                    <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                        <span>Trade Performed <span style="color:#E5C77A">*</span></span>
+                                        <input type="text" name="ref2Trade" required placeholder="e.g., Electrical" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Reference 3 -->
+                            <div class="reference-box">
+                                <div class="reference-title">Reference 3</div>
+                                <div class="reference-grid">
+                                    <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                        <span>Contact Name <span style="color:#E5C77A">*</span></span>
+                                        <input type="text" name="ref3Name" required placeholder="Full name" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                    </label>
+                                    <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                        <span>Phone Number <span style="color:#E5C77A">*</span></span>
+                                        <input type="tel" name="ref3Phone" required placeholder="(555) 555-5555" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                    </label>
+                                    <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                        <span>Trade Performed <span style="color:#E5C77A">*</span></span>
+                                        <input type="text" name="ref3Trade" required placeholder="e.g., Electrical" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Reference 4 -->
+                            <div class="reference-box">
+                                <div class="reference-title">Reference 4</div>
+                                <div class="reference-grid">
+                                    <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                        <span>Contact Name <span style="color:#E5C77A">*</span></span>
+                                        <input type="text" name="ref4Name" required placeholder="Full name" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                    </label>
+                                    <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                        <span>Phone Number <span style="color:#E5C77A">*</span></span>
+                                        <input type="tel" name="ref4Phone" required placeholder="(555) 555-5555" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                    </label>
+                                    <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">
+                                        <span>Trade Performed <span style="color:#E5C77A">*</span></span>
+                                        <input type="text" name="ref4Trade" required placeholder="e.g., Electrical" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 4: Company Qualifications & Insurance -->
+                        <div class="form-section">
+                            <div class="section-title">Section 4: Company Qualifications & Insurance</div>
+
+                            <div style="margin-bottom:1.5rem">
+                                <div style="font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:0.6rem"><span>Has your company ever failed to complete a project? <span style="color:#E5C77A">*</span></span></div>
+                                <div style="display:flex;gap:1rem">
+                                    <label style="display:flex;align-items:center;gap:0.5rem;font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;cursor:pointer">
+                                        <input type="radio" name="projectFailure" value="No" required style="cursor:pointer;accent-color:#C8A86B">
+                                        No
+                                    </label>
+                                    <label style="display:flex;align-items:center;gap:0.5rem;font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;cursor:pointer">
+                                        <input type="radio" name="projectFailure" value="Yes" style="cursor:pointer;accent-color:#C8A86B">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+
+                            <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:1.5rem">
+                                <span>How many employees do you have? <span style="color:#E5C77A">*</span></span>
+                                <input type="number" name="employeeCount" min="0" required placeholder="e.g., 15" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                            </label>
+
+                            <div style="margin-bottom:1.5rem;padding:1rem;background:rgba(200, 168, 107, 0.08);border:1px solid rgba(200, 168, 107, 0.2);border-radius:12px">
+                                <div style="font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:1rem"><span>Standard Insurance Limits Required <span style="color:#E5C77A">*</span></span></div>
+                                <div style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;line-height:1.8;margin-bottom:0.5rem">
+                                    <strong style="color:#C8A86B">Commercial General Liability:</strong><br/>
+                                    $1M per Occurrence; $2M Aggregate
+                                </div>
+                                <div style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;line-height:1.8;margin-bottom:0.5rem">
+                                    <strong style="color:#C8A86B">$1M Automobile Liability</strong>
+                                </div>
+                                <div style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;line-height:1.8;margin-bottom:0.5rem">
+                                    <strong style="color:#C8A86B">Umbrella Liability:</strong><br/>
+                                    $5M for Bids exceeding $75K; $3M for Bids between $7,500 and $75K
+                                </div>
+                                <div style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;line-height:1.8">
+                                    <strong style="color:#C8A86B">Worker's Compensation:</strong><br/>
+                                    $1M per Accident for Bids exceeding $75K; $500K for Bids between $7,500 and $75K
+                                </div>
+                                <div style="display:flex;align-items:center;gap:0.5rem;margin-top:1rem">
+                                    <input type="checkbox" id="insurance-comply" name="insuranceComplies" style="cursor:pointer;accent-color:#C8A86B" required />
+                                    <label for="insurance-comply" style="font-family:DM Sans, system-ui, sans-serif;font-size:12px;color:#EDE9E0;cursor:pointer;margin:0">I confirm our company meets these insurance requirements</label>
+                                </div>
+                            </div>
+
+                            <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:1.5rem">
+                                <span>Certificate of Insurance (COI) - Attach File <span style="color:#E5C77A">*</span></span>
+                                <input type="file" name="coiFile" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif;cursor:pointer" />
+                            </label>
+
+                            <div style="margin-bottom:1.5rem">
+                                <div style="font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:0.6rem"><span>Is your company bondable? <span style="color:#E5C77A">*</span></span></div>
+                                <div style="display:flex;gap:1rem">
+                                    <label style="display:flex;align-items:center;gap:0.5rem;font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;cursor:pointer">
+                                        <input type="radio" name="bondable" value="No" required style="cursor:pointer;accent-color:#C8A86B">
+                                        No
+                                    </label>
+                                    <label style="display:flex;align-items:center;gap:0.5rem;font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;cursor:pointer">
+                                        <input type="radio" name="bondable" value="Yes" style="cursor:pointer;accent-color:#C8A86B">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+
+                            <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:1.5rem">
+                                <span>If Yes, List Single Job Limit</span>
+                                <input type="text" name="singleJobLimit" placeholder="e.g., $500,000" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                            </label>
+                        </div>
+
+                        <!-- Section 5: OSHA Compliance -->
+                        <div class="form-section">
+                            <div class="section-title">Section 5: OSHA Compliance</div>
+
+                            <div style="margin-bottom:1.5rem">
+                                <div style="font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:0.6rem"><span>Does your company have a written safety program? <span style="color:#E5C77A">*</span></span></div>
+                                <div style="display:flex;gap:1rem">
+                                    <label style="display:flex;align-items:center;gap:0.5rem;font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;cursor:pointer">
+                                        <input type="radio" name="writtenSafetyProgram" value="No" required style="cursor:pointer;accent-color:#C8A86B">
+                                        No
+                                    </label>
+                                    <label style="display:flex;align-items:center;gap:0.5rem;font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;cursor:pointer">
+                                        <input type="radio" name="writtenSafetyProgram" value="Yes" style="cursor:pointer;accent-color:#C8A86B">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom:1.5rem">
+                                <div style="font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:0.6rem"><span>Do your field employees require OSHA 10 hour certification? <span style="color:#E5C77A">*</span></span></div>
+                                <div style="display:flex;gap:1rem">
+                                    <label style="display:flex;align-items:center;gap:0.5rem;font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;cursor:pointer">
+                                        <input type="radio" name="osha10Required" value="No" required style="cursor:pointer;accent-color:#C8A86B">
+                                        No
+                                    </label>
+                                    <label style="display:flex;align-items:center;gap:0.5rem;font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;cursor:pointer">
+                                        <input type="radio" name="osha10Required" value="Yes" style="cursor:pointer;accent-color:#C8A86B">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+
+                            <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:1.5rem">
+                                <span>If No, please describe the safety training you provide</span>
+                                <textarea name="safetyTraining" placeholder="Describe your safety training program..." style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif;min-height:100px;resize:vertical"></textarea>
+                            </label>
+
+                            <div style="margin-bottom:1.5rem">
+                                <div style="font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:0.6rem"><span>Has your company been cited by OSHA within the last 5 years? <span style="color:#E5C77A">*</span></span></div>
+                                <div style="display:flex;gap:1rem">
+                                    <label style="display:flex;align-items:center;gap:0.5rem;font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;cursor:pointer">
+                                        <input type="radio" name="oshaCited" value="No" required style="cursor:pointer;accent-color:#C8A86B">
+                                        No
+                                    </label>
+                                    <label style="display:flex;align-items:center;gap:0.5rem;font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;cursor:pointer">
+                                        <input type="radio" name="oshaCited" value="Yes" style="cursor:pointer;accent-color:#C8A86B">
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 6: Communication Preferences -->
+                        <div class="form-section">
+                            <div class="section-title">Section 6: Communication Preferences</div>
+
+                            <div style="margin-bottom:1.5rem">
+                                <div style="font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:0.6rem"><span>How would you like to receive bid invitations? <span style="color:#E5C77A">*</span></span></div>
+                                <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
+                                    <label style="display:flex;align-items:center;gap:0.5rem;font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;cursor:pointer">
+                                        <input type="checkbox" name="bidMethod" value="SMS" style="cursor:pointer;accent-color:#C8A86B">
+                                        SMS
+                                    </label>
+                                    <label style="display:flex;align-items:center;gap:0.5rem;font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;cursor:pointer">
+                                        <input type="checkbox" name="bidMethod" value="EMAIL" style="cursor:pointer;accent-color:#C8A86B">
+                                        Email
+                                    </label>
+                                    <label style="display:flex;align-items:center;gap:0.5rem;font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;cursor:pointer">
+                                        <input type="checkbox" name="bidMethod" value="BOTH" style="cursor:pointer;accent-color:#C8A86B">
+                                        Both
+                                    </label>
+                                </div>
+                            </div>
+
+                            <label style="display:flex;flex-direction:column;gap:0.4rem;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B;margin-bottom:1.5rem">
+                                <span>Name of Person Filling Out This Form <span style="color:#E5C77A">*</span></span>
+                                <input type="text" name="formFilledBy" required placeholder="Full name" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:0.9rem 1rem;color:#F7F2E8;border-radius:12px;outline:none;font-family:DM Sans, system-ui, sans-serif" />
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-gold" style="justify-content:center;border:none;cursor:pointer;padding:1rem 2rem">Submit Registration</button>
+                        <p id="form-status" style="font-family:DM Sans, system-ui, sans-serif;font-size:12px;color:#B8AE9B;margin:0;min-height:1.2em;text-align:center"></p>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer style="background:#0C0C0B;border-top:1px solid rgba(200, 168, 107, 0.28);padding:5rem 0 2.5rem;box-shadow:0 -10px 30px rgba(229, 199, 122, 0.06)">
+            <div style="max-width:1400px;margin:0 auto;padding:0 3rem" class="px-6 lg:px-12">
+                <div style="display:grid;grid-template-columns:minmax(280px, 1.1fr) minmax(280px, 0.9fr);gap:2rem;align-items:center;margin-bottom:3rem">
+                    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.85rem;padding:1rem 0">
+                        <img src="asset/favicon.png" alt="Waypoint Builders favicon" style="width:180px;height:180px;display:block;object-fit:contain" />
+                        <div>
+                            <p style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;line-height:1.7;color:#5A5550;margin:0">Building refined homes with lasting craftsmanship.</p>
+                            <p style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;line-height:1.7;color:#5A5550;margin:0.25rem 0 0">Serving Arizona</p>
+                        </div>
+                    </div>
+                    <div style="padding:1.4rem 1.5rem;border:1px solid rgba(200, 168, 107, 0.16);background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(200, 168, 107, 0.04));box-shadow:inset 0 1px 0 rgba(255,255,255,0.03)">
+                        <div style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:#C8A86B;margin-bottom:1rem;font-weight:500">Contact</div>
+                        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.8rem">
+                            <li style="display:flex;align-items:center;gap:0.7rem"><span style="width:16px;height:16px;color:#C8A86B;display:inline-flex;align-items:center;justify-content:center">☎</span><a href="tel:5203508780" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;text-decoration:none;transition:color 0.3s ease;letter-spacing:0.02em">520-350-8780</a></li>
+                            <li style="display:flex;align-items:center;gap:0.7rem"><span style="width:16px;height:16px;color:#C8A86B;display:inline-flex;align-items:center;justify-content:center">✉</span><a href="mailto:hello@thewaypointbuilders.com" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;text-decoration:none;transition:color 0.3s ease;letter-spacing:0.02em">hello@thewaypointbuilders.com</a></li>
+                            <li style="margin-top:0.35rem">
+                                <a href="contact.html" style="display:inline-block;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C8A86B;text-decoration:none;padding-bottom:2px;border-bottom:1px solid rgba(200, 168, 107, 0.3)">Request a Consultation</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="height:1px;background:rgba(200, 168, 107, 0.08);margin-bottom:1.5rem"></div>
+                <div style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;justify-content:space-between">
+                    <div style="display:flex;flex-wrap:wrap;gap:0.9rem;align-items:center">
+                        <p style="font-family:DM Sans, system-ui, sans-serif;font-size:11px;letter-spacing:0.1em;color:#3A3830;margin:0">© 2026 Waypoint Builders LLC. All rights reserved.</p>
+                        <span style="font-family:DM Sans, system-ui, sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">ROC License 366594</span>
+                    </div>
+                    <p style="font-family:Cormorant Garamond, Georgia, serif;font-size:13px;font-style:italic;color:#3A3830;letter-spacing:0.05em;margin:0">Building Beyond Expectations</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const ownershipButtons = document.querySelectorAll('.ownership-button');
+                const ownershipTypeInput = document.getElementById('ownershipType');
+
+                if (ownershipButtons.length && ownershipTypeInput) {
+                    ownershipButtons.forEach((button) => {
+                        button.addEventListener('click', (event) => {
+                            event.preventDefault();
+                            ownershipButtons.forEach((btn) => btn.classList.remove('selected'));
+                            button.classList.add('selected');
+                            ownershipTypeInput.value = button.getAttribute('data-ownership') || '';
+                        });
+                    });
+                }
+
+                const subcontractorForm = document.getElementById('subcontractor-form');
+                const formStatus = document.getElementById('form-status');
+
+                if (subcontractorForm && formStatus) {
+                    subcontractorForm.addEventListener('submit', (event) => {
+                        event.preventDefault();
+
+                        const data = new FormData(subcontractorForm);
+
+                        const fullFormResponses = [];
+                        const seenFieldNames = new Set();
+                        subcontractorForm.querySelectorAll('[name]').forEach((element) => {
+                            const fieldName = element.getAttribute('name');
+                            if (!fieldName || seenFieldNames.has(fieldName)) {
+                                return;
+                            }
+                            seenFieldNames.add(fieldName);
+
+                            const elementType = (element.type || '').toLowerCase();
+                            const tagName = element.tagName.toLowerCase();
+
+                            if (elementType === 'checkbox' || elementType === 'radio') {
+                                const checkedValues = [...subcontractorForm.querySelectorAll(`input[name="${fieldName}"]:checked`)]
+                                    .map((item) => item.value || item.id || 'checked')
+                                    .filter(Boolean);
+                                fullFormResponses.push(`${fieldName}: ${checkedValues.length > 0 ? checkedValues.join(', ') : 'Not selected'}`);
+                                return;
+                            }
+
+                            if (tagName === 'select') {
+                                const selectedValues = [...element.selectedOptions].map((option) => option.value).filter(Boolean);
+                                fullFormResponses.push(`${fieldName}: ${selectedValues.length > 0 ? selectedValues.join(', ') : 'Not selected'}`);
+                                return;
+                            }
+
+                            if (elementType === 'file') {
+                                const fileName = element.files && element.files[0] ? element.files[0].name : 'No file selected';
+                                fullFormResponses.push(`${fieldName}: ${fileName}`);
+                                return;
+                            }
+
+                            const fieldValue = element.value?.toString().trim();
+                            fullFormResponses.push(`${fieldName}: ${fieldValue || '(blank)'}`);
+                        });
+
+                        const companyName = data.get('companyName')?.toString().trim() || '';
+                        const ownershipType = data.get('ownershipType')?.toString() || '';
+                        const yearStarted = data.get('yearStarted')?.toString() || '';
+                        const address = data.get('address')?.toString().trim() || '';
+                        const city = data.get('city')?.toString().trim() || '';
+                        const state = data.get('state')?.toString().trim() || '';
+                        const zipCode = data.get('zipCode')?.toString().trim() || '';
+                        const federalId = data.get('federalId')?.toString().trim() || '';
+                        const ownerName = data.get('ownerName')?.toString().trim() || '';
+                        const contactFirstName = data.get('contactFirstName')?.toString().trim() || '';
+                        const contactLastName = data.get('contactLastName')?.toString().trim() || '';
+                        const phoneNumber = data.get('phoneNumber')?.toString().trim() || '';
+                        const email = data.get('email')?.toString().trim() || '';
+                        const licenseNumber = data.get('licenseNumber')?.toString().trim() || '';
+
+                        const tradesArray = [];
+                        document.querySelectorAll('input[name="trades"]:checked').forEach((checkbox) => {
+                            tradesArray.push(checkbox.value);
+                        });
+                        const trades = tradesArray.length > 0 ? tradesArray.join(', ') : 'None selected';
+
+                        if (!companyName || !ownershipType || !yearStarted || !address || !city || !state || !zipCode || !federalId || !ownerName || !contactFirstName || !contactLastName || !phoneNumber || !email || !licenseNumber) {
+                            formStatus.textContent = 'Please fill in all required fields in Section 1.';
+                            formStatus.style.color = '#E5C77A';
+                            return;
+                        }
+
+                        const ref1Name = data.get('ref1Name')?.toString().trim() || '';
+                        const ref1Phone = data.get('ref1Phone')?.toString().trim() || '';
+                        const ref1Trade = data.get('ref1Trade')?.toString().trim() || '';
+                        const ref2Name = data.get('ref2Name')?.toString().trim() || '';
+                        const ref2Phone = data.get('ref2Phone')?.toString().trim() || '';
+                        const ref2Trade = data.get('ref2Trade')?.toString().trim() || '';
+                        const ref3Name = data.get('ref3Name')?.toString().trim() || '';
+                        const ref3Phone = data.get('ref3Phone')?.toString().trim() || '';
+                        const ref3Trade = data.get('ref3Trade')?.toString().trim() || '';
+                        const ref4Name = data.get('ref4Name')?.toString().trim() || '';
+                        const ref4Phone = data.get('ref4Phone')?.toString().trim() || '';
+                        const ref4Trade = data.get('ref4Trade')?.toString().trim() || '';
+
+                        if (!ref1Name || !ref1Phone || !ref1Trade || !ref2Name || !ref2Phone || !ref2Trade || !ref3Name || !ref3Phone || !ref3Trade || !ref4Name || !ref4Phone || !ref4Trade) {
+                            formStatus.textContent = 'Please complete all 4 trade references in Section 3.';
+                            formStatus.style.color = '#E5C77A';
+                            return;
+                        }
+
+                        const projectFailure = data.get('projectFailure')?.toString() || '';
+                        const employeeCount = data.get('employeeCount')?.toString() || '';
+                        const insuranceComplies = data.get('insuranceComplies') ? 'Yes' : 'No';
+                        const bondable = data.get('bondable')?.toString() || '';
+                        const singleJobLimit = data.get('singleJobLimit')?.toString().trim() || 'N/A';
+
+                        const writtenSafetyProgram = data.get('writtenSafetyProgram')?.toString() || '';
+                        const osha10Required = data.get('osha10Required')?.toString() || '';
+                        const safetyTraining = data.get('safetyTraining')?.toString().trim() || 'N/A';
+                        const oshaCited = data.get('oshaCited')?.toString() || '';
+
+                        const bidMethodArray = [];
+                        document.querySelectorAll('input[name="bidMethod"]:checked').forEach((checkbox) => {
+                            bidMethodArray.push(checkbox.value);
+                        });
+                        const bidMethods = bidMethodArray.length > 0 ? bidMethodArray.join(', ') : '';
+                        const formFilledBy = data.get('formFilledBy')?.toString().trim() || '';
+
+                        if (!projectFailure || !employeeCount || !bondable || !writtenSafetyProgram || !osha10Required || !oshaCited || bidMethodArray.length === 0 || !formFilledBy) {
+                            formStatus.textContent = 'Please complete all required fields in all sections.';
+                            formStatus.style.color = '#E5C77A';
+                            return;
+                        }
+
+                        const body = [
+                            '=== SUBCONTRACTOR REGISTRATION ===',
+                            '',
+                            'SECTION 1: BASIC INFORMATION',
+                            `Company Name: ${companyName}`,
+                            `Ownership Type: ${ownershipType}`,
+                            `Year Started/Incorporated/Organized: ${yearStarted}`,
+                            `Address: ${address}`,
+                            `City: ${city}, ${state} ${zipCode}`,
+                            `Federal ID / SS#: ${federalId}`,
+                            `Owner's Name: ${ownerName}`,
+                            `Contact: ${contactFirstName} ${contactLastName}`,
+                            `Phone: ${phoneNumber}`,
+                            `Email: ${email}`,
+                            `License Number: ${licenseNumber}`,
+                            '',
+                            'SECTION 2: EXPERIENCE',
+                            `Trades Performed: ${trades}`,
+                            '',
+                            'SECTION 3: TRADE REFERENCES',
+                            `Reference 1: ${ref1Name} | Phone: ${ref1Phone} | Trade: ${ref1Trade}`,
+                            `Reference 2: ${ref2Name} | Phone: ${ref2Phone} | Trade: ${ref2Trade}`,
+                            `Reference 3: ${ref3Name} | Phone: ${ref3Phone} | Trade: ${ref3Trade}`,
+                            `Reference 4: ${ref4Name} | Phone: ${ref4Phone} | Trade: ${ref4Trade}`,
+                            '',
+                            'SECTION 4: COMPANY QUALIFICATIONS & INSURANCE',
+                            `Project Failure History: ${projectFailure}`,
+                            `Number of Employees: ${employeeCount}`,
+                            `Meets Insurance Requirements: ${insuranceComplies}`,
+                            `Company Bondable: ${bondable}`,
+                            `Single Job Limit: ${singleJobLimit}`,
+                            '',
+                            'SECTION 5: OSHA COMPLIANCE',
+                            `Written Safety Program: ${writtenSafetyProgram}`,
+                            `OSHA 10 Hour Certification Required: ${osha10Required}`,
+                            `Safety Training Provided: ${safetyTraining}`,
+                            `OSHA Citations in Last 5 Years: ${oshaCited}`,
+                            '',
+                            'SECTION 6: COMMUNICATION PREFERENCES',
+                            `Preferred Bid Invitation Method: ${bidMethods}`,
+                            `Person Filling Out Form: ${formFilledBy}`,
+                            '',
+                            'FULL FORM RESPONSES',
+                            ...fullFormResponses,
+                            '',
+                            'Submitted: ' + new Date().toLocaleString()
+                        ].join('\n');
+
+                        const mailtoLink = `mailto:hello@thewaypointbuilders.com?subject=${encodeURIComponent(`Subcontractor Registration - ${companyName}`)}&body=${encodeURIComponent(body)}`;
+                        window.location.href = mailtoLink;
+                        formStatus.textContent = 'Your email app should open with your registration pre-filled.';
+                        formStatus.style.color = '#7A7570';
+                        subcontractorForm.reset();
+                        ownershipButtons.forEach((btn) => btn.classList.remove('selected'));
+                    });
+                }
+
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                document.querySelectorAll('a[href^="#"]').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const id = link.getAttribute('href')?.slice(1);
+                        const target = id ? document.getElementById(id) : null;
+                        if (!target) return;
+
+                        event.preventDefault();
+                        if (prefersReducedMotion) {
+                            window.scrollTo({ top: target.offsetTop - 100, behavior: 'auto' });
+                            return;
+                        }
+
+                        const startY = window.scrollY;
+                        const targetY = Math.max(0, target.getBoundingClientRect().top + startY - 100);
+                        const distance = targetY - startY;
+                        const duration = Math.min(1600, Math.max(900, Math.abs(distance) * 0.7));
+                        let startTime = null;
+                        const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+                        const step = (timestamp) => {
+                            if (!startTime) startTime = timestamp;
+                            const progress = Math.min(1, (timestamp - startTime) / duration);
+                            const eased = easeOutCubic(progress);
+                            window.scrollTo(0, startY + distance * eased);
+                            if (progress < 1) {
+                                window.requestAnimationFrame(step);
+                            }
+                        };
+
+                        window.requestAnimationFrame(step);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

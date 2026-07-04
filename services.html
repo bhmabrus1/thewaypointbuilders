@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" />
+        <link rel="stylesheet" href="styles.css" type="text/css" />
+        <title>Services — Waypoint Builders LLC</title>
+        <meta name="description" content="Discover Waypoint Builders' architectural design, interior design, and renovation services with a refined, luxury-led approach." />
+        <link rel="icon" type="image/png" href="asset/favicon.png" />
+        <link rel="shortcut icon" href="asset/favicon.png" />
+        <style>
+            :root {
+                color-scheme: dark;
+                --gold-accent: #E5C77A;
+                --gold-border: rgba(229, 199, 122, 0.24);
+                --gold-soft: rgba(229, 199, 122, 0.16);
+                --gold-glow: 0 0 0 1px rgba(229, 199, 122, 0.18), 0 0 28px rgba(229, 199, 122, 0.08);
+            }
+
+            body {
+                margin: 0;
+                background: #0c0c0b;
+                color: #EDE9E0;
+                font-family: DM Sans, system-ui, sans-serif;
+            }
+
+            .luxury-shell {
+                background: radial-gradient(circle at top, rgba(229, 199, 122, 0.08), transparent 45%);
+            }
+
+            .page-hero {
+                min-height: 100dvh;
+                position: relative;
+                display: flex;
+                align-items: flex-end;
+                overflow: hidden;
+            }
+
+            .page-hero::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background-image: url('asset/about.png');
+                background-size: cover;
+                background-position: center 30%;
+                opacity: 0.8;
+                filter: saturate(0.85) contrast(1.02);
+                z-index: 0;
+            }
+
+            .page-hero::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(135deg, rgba(12, 12, 11, 0.8) 0%, rgba(20, 18, 16, 0.78) 45%, rgba(12, 12, 11, 0.92) 100%);
+                z-index: 1;
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 2;
+                max-width: 1400px;
+                margin: 0 auto;
+                width: 100%;
+                padding: 6rem 3rem 7rem;
+            }
+
+            .section-label {
+                font-family: DM Sans, system-ui, sans-serif;
+                font-size: 11px;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: #C8A86B;
+                margin-bottom: 1rem;
+                text-shadow: 0 0 18px rgba(229, 199, 122, 0.14);
+            }
+
+            .section-title {
+                font-family: Cormorant Garamond, Georgia, serif;
+                font-size: clamp(2rem, 4vw, 2.8rem);
+                font-weight: 400;
+                color: #EDE9E0;
+                margin-bottom: 1rem;
+                letter-spacing: -0.02em;
+            }
+
+            .section-copy {
+                max-width: 760px;
+                color: #8A837C;
+                font-size: 1rem;
+                line-height: 1.8;
+                margin: 0;
+            }
+
+            section {
+                padding: 5rem 3rem;
+                background: #0c0c0b;
+                position: relative;
+            }
+
+            section:not(.page-hero)::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                width: min(1200px, calc(100% - 6rem));
+                height: 1px;
+                background: linear-gradient(90deg, transparent, rgba(229, 199, 122, 0.5), transparent);
+                box-shadow: 0 0 24px rgba(229, 199, 122, 0.16);
+            }
+
+            .inner-wrap {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .service-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.4rem;
+                margin-top: 2rem;
+            }
+
+            .service-layout {
+                margin-top: 2rem;
+            }
+
+            .service-panel {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                gap: 1.5rem;
+                align-items: stretch;
+            }
+
+            .service-card,
+            .service-media {
+                height: 100%;
+            }
+
+            .service-card {
+                background: rgba(255,255,255,0.04);
+                border: 1px solid var(--gold-border);
+                border-radius: 20px;
+                padding: 1.6rem;
+                box-shadow: inset 0 1px 0 rgba(255,255,255,0.03), 0 10px 30px rgba(0,0,0,0.2), var(--gold-glow);
+            }
+
+            .service-card-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                min-height: 100%;
+            }
+
+            .service-media {
+                min-height: 320px;
+                border-radius: 20px;
+                overflow: hidden;
+                border: 1px solid var(--gold-border);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2), var(--gold-glow);
+            }
+
+            .service-media img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            .service-card h3 {
+                font-family: Cormorant Garamond, Georgia, serif;
+                font-size: 1.55rem;
+                color: #F7F2E8;
+                margin: 0 0 1.25rem;
+                font-weight: 500;
+            }
+
+            .check-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: grid;
+                gap: 0.8rem;
+            }
+
+            .check-list li {
+                display: flex;
+                gap: 0.7rem;
+                align-items: flex-start;
+                color: #EDE9E0;
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+
+            .check-list .check {
+                color: #E5C77A;
+                font-size: 1rem;
+                line-height: 1.1;
+                margin-top: 0.1rem;
+            }
+
+            .image-band {
+                position: relative;
+                min-height: 320px;
+                border-radius: 24px;
+                overflow: hidden;
+                margin: 0;
+                box-shadow: 0 14px 35px rgba(0,0,0,0.22);
+            }
+
+            .image-band::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(90deg, rgba(12, 12, 11, 0.8), rgba(12, 12, 11, 0.2));
+                z-index: 1;
+            }
+
+            .image-band img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            .image-band .caption {
+                position: absolute;
+                z-index: 2;
+                left: 1.6rem;
+                right: 1.6rem;
+                bottom: 1.6rem;
+                max-width: 540px;
+                color: #F7F2E8;
+                background: rgba(12, 12, 11, 0.42);
+                backdrop-filter: blur(8px);
+                border: 1px solid rgba(255,255,255,0.08);
+                border-radius: 16px;
+                padding: 1rem 1.1rem;
+            }
+
+            .image-band .caption h4 {
+                font-family: Cormorant Garamond, Georgia, serif;
+                font-size: 1.65rem;
+                font-weight: 400;
+                margin: 0 0 0.35rem;
+            }
+
+            .image-band .caption p {
+                margin: 0;
+                color: #D8D2C9;
+                line-height: 1.6;
+            }
+
+            .process-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 1.2rem;
+                margin-top: 2rem;
+            }
+
+            .process-card {
+                padding: 1.4rem;
+                background: rgba(255,255,255,0.04);
+                border: 1px solid rgba(229, 199, 122, 0.2);
+                border-radius: 18px;
+            }
+
+            .process-number {
+                font-family: DM Sans, system-ui, sans-serif;
+                font-size: 0.8rem;
+                letter-spacing: 0.25em;
+                text-transform: uppercase;
+                color: #E5C77A;
+                margin-bottom: 0.6rem;
+            }
+
+            .process-card h3 {
+                font-family: Cormorant Garamond, Georgia, serif;
+                font-size: 1.25rem;
+                color: #F7F2E8;
+                margin: 0 0 0.55rem;
+                font-weight: 500;
+            }
+
+            .process-card p {
+                margin: 0;
+                color: #8A837C;
+                line-height: 1.7;
+                font-size: 0.95rem;
+            }
+
+            .btn-gold {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.9rem 1.35rem;
+                border-radius: 999px;
+                border: 1px solid var(--gold-border);
+                background: var(--gold-soft);
+                color: #E5C77A;
+                text-decoration: none;
+                font-family: DM Sans, system-ui, sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 0.2em;
+                font-size: 0.8rem;
+                box-shadow: var(--gold-glow);
+                transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .btn-gold:hover {
+                background: rgba(229, 199, 122, 0.24);
+                box-shadow: 0 0 0 1px rgba(229, 199, 122, 0.24), 0 0 36px rgba(229, 199, 122, 0.12);
+                transform: translateY(-1px);
+            }
+
+            @media (max-width: 1024px) {
+                .service-panel {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .hero-content,
+                section {
+                    padding-left: 1.5rem;
+                    padding-right: 1.5rem;
+                }
+
+                .service-card,
+                .service-media {
+                    min-height: 0;
+                }
+
+                .service-media {
+                    min-height: 240px;
+                }
+
+                section:not(.page-hero)::before {
+                    width: calc(100% - 3rem);
+                }
+
+                .image-band {
+                    min-height: 280px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="luxury-shell">
+            <header id="site-header" style="position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease, box-shadow 0.5s ease;background:transparent;backdrop-filter:none;border-bottom:1px solid transparent;box-shadow:none">
+                <div style="max-width:1400px;margin:0 auto;padding:0 3rem;display:flex;align-items:center;justify-content:space-between;height:92px" class="px-6 lg:px-12">
+                    <a href="index.html" style="display:flex;align-items:center;text-decoration:none;padding-top:10px">
+                        <img src="asset/logo.png" alt="Waypoint Builders logo" style="height:clamp(72px, 8vw, 140px);width:auto;display:block" />
+                    </a>
+                    <nav id="header-nav" class="header-nav" style="align-items:center;gap:1rem">
+                        <a class="header-nav-link" href="index.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">Home</a>
+                        <a class="header-nav-link" href="about.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">About</a>
+                        <a class="header-nav-link active" href="services.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#A48240;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid rgba(164, 130, 64, 0.5)" data-status="active" aria-current="page">Services</a>
+                        <a class="header-nav-link" href="projects.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">Projects</a>
+                        <a class="header-nav-link" href="contact.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">Contact</a>
+                        <a class="header-nav-link" href="subcontracts.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">Subcontracting</a>
+                    </nav>
+                    <div style="display:flex;align-items:center;gap:0.75rem">
+                        <span style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;font-weight:500;color:#C8A86B;padding:0.5rem 0.75rem;border:1px solid rgba(200, 168, 107, 0.28);border-radius:999px;background:rgba(255,255,255,0.03);box-shadow:inset 0 1px 0 rgba(255,255,255,0.03)">ROC 366594</span>
+                        <a href="contact.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;text-decoration:none;color:#E5C77A;background:rgba(138, 104, 43, 0.22);border:1px solid rgba(164, 130, 64, 0.3);padding:9px 18px;transition:border-color 0.3s ease, background 0.3s ease, color 0.3s ease" class="header-cta">Begin Your Build</a>
+                    </div>
+                    <button class="header-menu-toggle" id="mobile-menu-toggle" style="background:none;border:none;color:#EDE9E0;cursor:pointer;padding:8px" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav-panel">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true">
+                            <path d="M4 5h16"></path>
+                            <path d="M4 12h16"></path>
+                            <path d="M4 19h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <section class="page-hero">
+                <div class="hero-content">
+                    <div class="section-label">What we offer</div>
+                    <h1 style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(3rem, 7vw, 6rem);font-weight:300;line-height:1.05;color:#EDE9E0;margin:0 0 1.25rem;letter-spacing:-0.01em">Built Around
+                        <span style="font-style:italic;color:#C8A86B">You.</span>
+                    </h1>
+                    <p class="section-copy">From acquisition and preconstruction to architectural design, interiors, renovations, and final delivery, Waypoint Builders offers a refined, white-glove approach shaped around your vision and site.</p>
+                </div>
+            </section>
+
+            <section>
+                <div class="inner-wrap">
+                    <div class="section-label">Signature Services</div>
+                    <h2 class="section-title">Full Site Acquisition Support & Development</h2>
+                    <p class="section-copy">We guide each project from the earliest conversations through the finished residence, combining strategic acquisition insight with design leadership and build excellence.</p>
+
+                    <div class="service-layout">
+                        <div class="service-panel">
+                            <div class="service-card">
+                                <div class="service-card-content">
+                                    <h3>Comprehensive Build Support</h3>
+                                    <ul class="check-list">
+                                        <li><span class="check">✓</span><span>Full site acquisition support &amp; evaluation</span></li>
+                                        <li><span class="check">✓</span><span>Collaborative design with award-winning architects</span></li>
+                                        <li><span class="check">✓</span><span>Premium material sourcing &amp; procurement</span></li>
+                                        <li><span class="check">✓</span><span>Custom millwork and artisan finishes</span></li>
+                                        <li><span class="check">✓</span><span>Smart home integration &amp; automation</span></li>
+                                        <li><span class="check">✓</span><span>Landscape and exterior design coordination</span></li>
+                                        <li><span class="check">✓</span><span>Dedicated project manager throughout</span></li>
+                                        <li><span class="check">✓</span><span>10-year structural warranty</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-media">
+                                <img src="asset/contact.png" alt="Luxury indoor design detail" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="inner-wrap">
+                    <div class="section-label">Architecture</div>
+                    <h2 class="section-title">Architectural Design</h2>
+                    <p class="section-copy">Our architectural services are shaped by site conditions, natural light, and the rhythms of everyday living, resulting in homes that feel effortless and enduring.</p>
+
+                    <div class="service-layout">
+                        <div class="service-panel">
+                            <div class="service-card">
+                                <div class="service-card-content">
+                                    <h3>Design Direction</h3>
+                                    <ul class="check-list">
+                                        <li><span class="check">✓</span><span>Site analysis and conceptual design</span></li>
+                                        <li><span class="check">✓</span><span>Interior and exterior architectural drawings</span></li>
+                                        <li><span class="check">✓</span><span>3D rendering and virtual walkthroughs</span></li>
+                                        <li><span class="check">✓</span><span>Material and finish specification</span></li>
+                                        <li><span class="check">✓</span><span>Sustainable design consultation</span></li>
+                                        <li><span class="check">✓</span><span>Structural and MEP engineering coordination</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-media">
+                                <img src="asset/about.png" alt="Elegant architectural exterior" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="inner-wrap">
+                    <div class="section-label">Interiors</div>
+                    <h2 class="section-title">Interior Design</h2>
+                    <p class="section-copy">Interior design at Waypoint is as much about atmosphere as it is about function, combining rare materials, custom detailing, and layered comfort.</p>
+
+                    <div class="service-layout">
+                        <div class="service-panel">
+                            <div class="service-card">
+                                <div class="service-card-content">
+                                    <h3>Refined Interior Styling</h3>
+                                    <ul class="check-list">
+                                        <li><span class="check">✓</span><span>Custom cabinetry and millwork</span></li>
+                                        <li><span class="check">✓</span><span>Natural stone and hardwood selection</span></li>
+                                        <li><span class="check">✓</span><span>Artisan tile and mosaic work</span></li>
+                                        <li><span class="check">✓</span><span>Bespoke hardware and fixtures</span></li>
+                                        <li><span class="check">✓</span><span>Custom lighting design</span></li>
+                                        <li><span class="check">✓</span><span>Built-in furniture and architectural details</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-media">
+                                <img src="asset/ready_to_build.png" alt="Luxury interior finishing detail" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="inner-wrap">
+                    <div class="section-label">Renovations</div>
+                    <h2 class="section-title">Renovations</h2>
+                    <p class="section-copy">Whether preserving a historic property or reimagining a contemporary one, our renovations are delivered with the same rigor, craftsmanship, and discretion as new construction.</p>
+
+                    <div class="service-layout">
+                        <div class="service-panel">
+                            <div class="service-card">
+                                <div class="service-card-content">
+                                    <h3>Thoughtful Transformation</h3>
+                                    <ul class="check-list">
+                                        <li><span class="check">✓</span><span>Structural assessment and planning</span></li>
+                                        <li><span class="check">✓</span><span>Historic preservation expertise</span></li>
+                                        <li><span class="check">✓</span><span>Full kitchen and bath renovations</span></li>
+                                        <li><span class="check">✓</span><span>Room additions and expansions</span></li>
+                                        <li><span class="check">✓</span><span>Systems modernization (HVAC, electrical, plumbing)</span></li>
+                                        <li><span class="check">✓</span><span>Pool and outdoor living renovation</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="service-media">
+                                <img src="asset/ready_to_build.png" alt="Luxury renovation project in progress" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="inner-wrap">
+                    <div class="section-label">The Waypoint Process</div>
+                    <h2 class="section-title">A process designed for clarity, calm, and precision.</h2>
+                    <div class="process-grid">
+                        <div class="process-card">
+                            <div class="process-number">01 / Step 01</div>
+                            <h3>Discovery</h3>
+                            <p>A private consultation to understand your vision, your site, and your budget. We ask the questions others don't.</p>
+                        </div>
+                        <div class="process-card">
+                            <div class="process-number">02 / Step 02</div>
+                            <h3>Design</h3>
+                            <p>Working with our architects and your input, we develop detailed plans, 3D visualizations, and material palettes.</p>
+                        </div>
+                        <div class="process-card">
+                            <div class="process-number">03 / Step 03</div>
+                            <h3>Build</h3>
+                            <p>Our master tradespeople bring the design to life with the precision and care that defines every Waypoint project.</p>
+                        </div>
+                        <div class="process-card">
+                            <div class="process-number">04 / Step 04</div>
+                            <h3>Handover</h3>
+                            <p>A final walkthrough to your exacting standards — and a relationship that extends well beyond move-in day.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section style="background:#0C0C0B;padding:100px 0;border-top:1px solid rgba(200, 168, 107, 0.08);position:relative;overflow:hidden">
+                <div style="position:absolute;inset:0;background-image:url('asset/ready_to_build.png');background-size:cover;background-position:center;opacity:0.18;filter:grayscale(100%) contrast(1.08);mix-blend-mode:screen"></div>
+                <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(12,12,11,0.9) 0%, rgba(12,12,11,0.68) 45%, rgba(12,12,11,0.84) 100%)"></div>
+                <div style="position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:0 3rem;display:flex;flex-direction:column;align-items:center;text-align:center" class="px-6 lg:px-12">
+                    <div class="section-label" style="justify-content:center">Your Vision Awaits</div>
+                    <h2 style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(2.5rem, 5vw, 5.5rem);font-weight:300;color:#EDE9E0;margin:0 0 2rem;line-height:1.05;letter-spacing:-0.01em;max-width:700px">
+                        Ready to Build Something
+                        <span style="font-style:italic;color:#C8A86B">Extraordinary?</span>
+                    </h2>
+                    <p style="font-family:DM Sans, system-ui, sans-serif;font-size:1rem;line-height:1.8;color:#CFC7BD;margin:0 0 2rem;max-width:620px">
+                        Let’s discuss your site, your vision, and the standards you expect from a builder who treats every project as a legacy.
+                    </p>
+                    <a href="contact.html" class="btn-gold">Schedule a Consultation</a>
+                </div>
+            </section>
+
+            <footer style="background:#0C0C0B;border-top:1px solid rgba(200, 168, 107, 0.28);padding:5rem 0 2.5rem;box-shadow:0 -10px 30px rgba(229, 199, 122, 0.06)">
+                <div style="max-width:1400px;margin:0 auto;padding:0 3rem" class="px-6 lg:px-12">
+                    <div style="display:grid;grid-template-columns:minmax(280px, 1.1fr) minmax(280px, 0.9fr);gap:2rem;align-items:center;margin-bottom:3rem">
+                        <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.85rem;padding:1rem 0">
+                            <img src="asset/favicon.png" alt="Waypoint Builders favicon" style="width:180px;height:180px;display:block;object-fit:contain" />
+                            <div>
+                                <p style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;line-height:1.7;color:#5A5550;margin:0">Building refined homes with lasting craftsmanship.</p>
+                                <p style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;line-height:1.7;color:#5A5550;margin:0.25rem 0 0">Serving Arizona</p>
+                            </div>
+                        </div>
+                        <div style="padding:1.4rem 1.5rem;border:1px solid rgba(200, 168, 107, 0.18);background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(200, 168, 107, 0.04));box-shadow:inset 0 1px 0 rgba(255,255,255,0.03), 0 0 24px rgba(229, 199, 122, 0.08)">
+                            <div style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:#C8A86B;margin-bottom:1rem;font-weight:500">Contact</div>
+                            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.8rem">
+                                <li style="display:flex;align-items:center;gap:0.7rem"><span style="width:16px;height:16px;color:#C8A86B;display:inline-flex;align-items:center;justify-content:center">☎</span><a href="tel:5203508780" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;text-decoration:none;transition:color 0.3s ease;letter-spacing:0.02em">520-350-8780</a></li>
+                                <li style="display:flex;align-items:center;gap:0.7rem"><span style="width:16px;height:16px;color:#C8A86B;display:inline-flex;align-items:center;justify-content:center">✉</span><a href="mailto:hello@thewaypointbuilders.com" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;text-decoration:none;transition:color 0.3s ease;letter-spacing:0.02em">hello@thewaypointbuilders.com</a></li>
+                                <li style="margin-top:0.35rem">
+                                    <a href="contact.html" style="display:inline-block;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C8A86B;text-decoration:none;padding-bottom:2px;border-bottom:1px solid rgba(200, 168, 107, 0.3)">Request a Consultation</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="height:1px;background:rgba(200, 168, 107, 0.08);margin-bottom:1.5rem"></div>
+                    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;justify-content:space-between">
+                        <div style="display:flex;flex-wrap:wrap;gap:0.9rem;align-items:center">
+                            <p style="font-family:DM Sans, system-ui, sans-serif;font-size:11px;letter-spacing:0.1em;color:#3A3830;margin:0">© 2026 Waypoint Builders LLC. All rights reserved.</p>
+                            <span style="font-family:DM Sans, system-ui, sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">ROC License 366594</span>
+                        </div>
+                        <p style="font-family:Cormorant Garamond, Georgia, serif;font-size:13px;font-style:italic;color:#3A3830;letter-spacing:0.05em;margin:0">Building Beyond Expectations</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script>
+            const siteHeader = document.getElementById('site-header');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const headerNav = document.getElementById('header-nav');
+            const setHeaderState = () => {
+                const scrolled = window.scrollY > 20;
+                siteHeader.style.background = scrolled ? 'rgba(12, 12, 11, 0.72)' : 'transparent';
+                siteHeader.style.borderBottom = scrolled ? '1px solid rgba(164, 130, 64, 0.12)' : '1px solid transparent';
+                siteHeader.style.backdropFilter = scrolled ? 'blur(12px)' : 'none';
+                siteHeader.style.boxShadow = scrolled ? '0 6px 20px rgba(0, 0, 0, 0.08)' : 'none';
+            };
+            setHeaderState();
+            window.addEventListener('scroll', setHeaderState, { passive: true });
+
+            if (mobileMenuToggle && headerNav) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    const isOpen = headerNav.classList.contains('mobile-open');
+                    headerNav.classList.toggle('mobile-open', !isOpen);
+                    mobileMenuToggle.setAttribute('aria-expanded', String(!isOpen));
+                });
+            }
+        </script>
+    </body>
+</html>

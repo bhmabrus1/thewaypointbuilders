@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charSet="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" data-precedence="default"/>
+        <link rel="stylesheet" href="styles.css" type="text/css" data-precedence="default"/>
+        <title>Projects — Waypoint Builders LLC</title>
+        <meta name="description" content="Explore a curated collection of custom luxury homes and signature residences crafted by Waypoint Builders."/>
+        <link rel="icon" type="image/png" href="asset/favicon.png"/>
+        <link rel="shortcut icon" href="asset/favicon.png"/>
+    </head>
+    <body>
+        <header id="site-header" style="position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease, box-shadow 0.5s ease;background:transparent;backdrop-filter:none;border-bottom:1px solid transparent;box-shadow:none">
+            <div style="max-width:1400px;margin:0 auto;padding:0 3rem;display:flex;align-items:center;justify-content:space-between;height:92px" class="px-6 lg:px-12">
+                <a href="index.html" style="display:flex;align-items:center;text-decoration:none;padding-top:10px" aria-current="page">
+                    <img src="asset/logo.png" alt="Waypoint Builders logo" style="height:clamp(72px, 8vw, 140px);width:auto;display:block" />
+                </a>
+                <nav id="header-nav" class="header-nav" style="align-items:center;gap:1rem">
+                    <a class="header-nav-link" href="index.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">Home</a>
+                    <a class="header-nav-link" href="about.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">About</a>
+                    <a class="header-nav-link" href="services.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">Services</a>
+                    <a class="header-nav-link active" href="projects.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#A48240;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid rgba(164, 130, 64, 0.5)" data-status="active" aria-current="page">Projects</a>
+                    <a class="header-nav-link" href="contact.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">Contact</a>
+                    <a class="header-nav-link" href="subcontracts.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;font-weight:400;text-decoration:none;color:#EDE9E0;transition:color 0.3s ease,padding-bottom 0.3s ease,border-color 0.3s ease;padding-bottom:2px;border-bottom:1px solid transparent">Subcontracting</a>
+                </nav>
+                <div style="display:flex;align-items:center;gap:0.75rem">
+                    <span style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;font-weight:500;color:#C8A86B;padding:0.5rem 0.75rem;border:1px solid rgba(200, 168, 107, 0.28);border-radius:999px;background:rgba(255,255,255,0.03);box-shadow:inset 0 1px 0 rgba(255,255,255,0.03)">ROC 366594</span>
+                    <a href="contact.html" style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;text-decoration:none;color:#E5C77A;background:rgba(138, 104, 43, 0.22);border:1px solid rgba(164, 130, 64, 0.3);padding:9px 18px;transition:border-color 0.3s ease, background 0.3s ease, color 0.3s ease" class="header-cta">Begin Your Build</a>
+                </div>
+                <button class="header-menu-toggle" id="mobile-menu-toggle" style="background:none;border:none;color:#EDE9E0;cursor:pointer;padding:8px" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav-panel">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true">
+                        <path d="M4 5h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M4 19h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <script>
+            const siteHeader = document.getElementById('site-header');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const headerNav = document.getElementById('header-nav');
+            const setHeaderState = () => {
+                const scrolled = window.scrollY > 20;
+                siteHeader.style.background = scrolled ? 'rgba(12, 12, 11, 0.72)' : 'transparent';
+                siteHeader.style.borderBottom = scrolled ? '1px solid rgba(164, 130, 64, 0.12)' : '1px solid transparent';
+                siteHeader.style.backdropFilter = scrolled ? 'blur(12px)' : 'none';
+                siteHeader.style.boxShadow = scrolled ? '0 6px 20px rgba(0, 0, 0, 0.08)' : 'none';
+            };
+            setHeaderState();
+            window.addEventListener('scroll', setHeaderState, { passive: true });
+
+            if (mobileMenuToggle && headerNav) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    const isOpen = headerNav.classList.contains('mobile-open');
+                    headerNav.classList.toggle('mobile-open', !isOpen);
+                    mobileMenuToggle.setAttribute('aria-expanded', String(!isOpen));
+                });
+            }
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 1023 && headerNav) {
+                    headerNav.classList.remove('mobile-open');
+                    if (mobileMenuToggle) {
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            document.querySelectorAll('a[href^="#"]').forEach((link) => {
+                link.addEventListener('click', (event) => {
+                    const id = link.getAttribute('href')?.slice(1);
+                    const target = id ? document.getElementById(id) : null;
+                    if (!target) return;
+
+                    event.preventDefault();
+                    if (prefersReducedMotion) {
+                        window.scrollTo({ top: target.offsetTop - 100, behavior: 'auto' });
+                        return;
+                    }
+
+                    const startY = window.scrollY;
+                    const targetY = Math.max(0, target.getBoundingClientRect().top + startY - 100);
+                    const distance = targetY - startY;
+                    const duration = Math.min(1600, Math.max(900, Math.abs(distance) * 0.7));
+                    let startTime = null;
+                    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+                    const step = (timestamp) => {
+                        if (!startTime) startTime = timestamp;
+                        const progress = Math.min(1, (timestamp - startTime) / duration);
+                        const eased = easeOutCubic(progress);
+                        window.scrollTo(0, startY + distance * eased);
+                        if (progress < 1) {
+                            window.requestAnimationFrame(step);
+                        }
+                    };
+
+                    window.requestAnimationFrame(step);
+                });
+            });
+        </script>
+
+        <main>
+            <section style="min-height:100dvh;position:relative;display:flex;align-items:flex-end;overflow:hidden">
+                <div style="position:absolute;inset:0;background-image:url('asset/ready_to_build.png');background-size:cover;background-position:center 35%;z-index:0"></div>
+                <div style="position:absolute;inset:0;background:linear-gradient(105deg, rgba(12,12,11,0.97) 0%, rgba(12,12,11,0.82) 45%, rgba(12,12,11,0.3) 100%);z-index:1"></div>
+                <div style="position:absolute;bottom:0;left:0;right:0;height:30%;background:linear-gradient(to top, #0C0C0B, transparent);z-index:2"></div>
+                <div style="position:relative;z-index:3;max-width:1400px;margin:0 auto;padding:0 3rem 7rem;width:100%" class="px-6 lg:px-12 pb-20 lg:pb-28">
+                    <div class="opacity-0 animate-fade-up" style="max-width:760px">
+                        <div class="section-label" style="margin-bottom:2rem">Selected Projects</div>
+                        <h1 style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(3rem, 7vw, 6rem);font-weight:300;line-height:1.05;color:#EDE9E0;margin:0 0 2rem;letter-spacing:-0.01em">
+                            A portfolio of
+                            <span style="font-style:italic;color:#C8A86B">timeless residences</span>
+                        </h1>
+                        <p style="font-family:DM Sans, system-ui, sans-serif;font-size:clamp(15px, 1.5vw, 17px);line-height:1.8;color:#7A7570;max-width:520px;margin:0 0 3rem;font-weight:300">
+                            Each project reflects our commitment to architectural clarity, honest materials, and meticulous craft — from mountain retreats to contemporary desert homes.
+                        </p>
+                        <div class="opacity-0 animate-fade-up delay-400" style="display:flex;gap:1rem;flex-wrap:wrap">
+                            <a href="contact.html" class="btn-gold">Schedule a Consultation</a>
+                            <a href="index.html" class="btn-outline">Back Home</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div style="background:#141412;border-top:1px solid rgba(200, 168, 107, 0.08);border-bottom:1px solid rgba(200, 168, 107, 0.08);padding:1.25rem 0;overflow:hidden">
+                <div class="animate-marquee project-marquee" style="display:flex;gap:4rem;white-space:nowrap;width:max-content">
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(200, 168, 107, 0.56);text-transform:capitalize">Craftsmanship</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.4);text-transform:capitalize">Precision</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(200, 168, 107, 0.56);text-transform:capitalize">Legacy</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.4);text-transform:capitalize">Innovation</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(200, 168, 107, 0.56);text-transform:capitalize">Excellence</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.4);text-transform:capitalize">Vision</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(200, 168, 107, 0.56);text-transform:capitalize">Detail</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(200, 168, 107, 0.56);text-transform:capitalize">Craftsmanship</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.4);text-transform:capitalize">Precision</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(200, 168, 107, 0.56);text-transform:capitalize">Legacy</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.4);text-transform:capitalize">Innovation</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(200, 168, 107, 0.56);text-transform:capitalize">Excellence</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(250, 242, 229, 0.4);text-transform:capitalize">Vision</span>
+                    <span style="font-family:Cormorant Garamond, Georgia, serif;font-size:17px;font-style:italic;letter-spacing:0.2em;color:rgba(200, 168, 107, 0.56);text-transform:capitalize">Detail</span>
+                </div>
+            </div>
+
+            <section style="background:#0C0C0B;padding:clamp(5rem, 10vw, 9rem) 0">
+                <div style="max-width:1400px;margin:0 auto;padding:0 3rem" class="px-6 lg:px-12">
+                    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem">
+                        <div>
+                            <div class="section-label">Featured Portfolio</div>
+                            <h2 style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(2.1rem, 4vw, 3.2rem);font-weight:300;color:#EDE9E0;margin:0;line-height:1.1;letter-spacing:-0.01em">
+                                Luxury projects <span style="font-style:italic;color:#C8A86B">in the works</span>
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr;gap:1.5rem">
+                        <div class="project-card" style="position:relative;overflow:hidden;cursor:pointer;min-height:320px">
+                            <button class="project-card-toggle" type="button" aria-label="Toggle gallery" aria-expanded="false">+</button>
+                            <img src="asset/sahuarita/sahuarita.png" alt="The Sonoran" class="project-img" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+                            <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(12,12,11,0.9) 0%, rgba(12,12,11,0.2) 60%, transparent 100%)"></div>
+                            <div class="project-overlay" style="position:absolute;inset:0;background:rgba(12,12,11,0.45);border:1px solid rgba(200, 168, 107, 0.2)"></div>
+                            <div style="position:absolute;bottom:0;left:0;right:0;padding:1.75rem;z-index:2">
+                                <div style="font-family:DM Sans, system-ui, sans-serif;font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:#C8A86B;margin-bottom:0.5rem">Ruby Star Airpark</div>
+                                <div style="font-family:Cormorant Garamond, Georgia, serif;font-size:1.5rem;font-weight:400;color:#EDE9E0;line-height:1.2;margin-bottom:0.45rem">The Sonoran</div>
+                                <div style="font-family:DM Sans, system-ui, sans-serif;font-size:11px;color:#CFC7BE;letter-spacing:0.05em">Sahuarita, Arizona · 8,429 sq ft</div>
+                            </div>
+                            <div class="project-card-gallery" aria-hidden="true">
+                                <img src="asset/gallery-1.svg" alt="Gallery preview 1">
+                                <img src="asset/gallery-2.svg" alt="Gallery preview 2">
+                                <img src="asset/gallery-3.svg" alt="Gallery preview 3">
+                                <img src="asset/gallery-4.svg" alt="Gallery preview 4">
+                            </div>
+                        </div>
+
+                        <div class="project-card" style="position:relative;overflow:hidden;cursor:pointer;min-height:320px">
+                            <button class="project-card-toggle" type="button" aria-label="Toggle gallery" aria-expanded="false">+</button>
+                            <img src="asset/sahuarita/hangar.png" alt="Dessert Sky" class="project-img" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+                            <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(12,12,11,0.9) 0%, rgba(12,12,11,0.2) 60%, transparent 100%)"></div>
+                            <div class="project-overlay" style="position:absolute;inset:0;background:rgba(12,12,11,0.45);border:1px solid rgba(200, 168, 107, 0.2)"></div>
+                            <div style="position:absolute;bottom:0;left:0;right:0;padding:1.75rem;z-index:2">
+                                <div style="font-family:DM Sans, system-ui, sans-serif;font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:#C8A86B;margin-bottom:0.5rem">Ruby Star Airpark</div>
+                                <div style="font-family:Cormorant Garamond, Georgia, serif;font-size:1.5rem;font-weight:400;color:#EDE9E0;line-height:1.2;margin-bottom:0.45rem">Dessert Sky</div>
+                                <div style="font-family:DM Sans, system-ui, sans-serif;font-size:11px;color:#CFC7BE;letter-spacing:0.05em">Sahuarita, Arizona · 3,100 sq ft</div>
+                            </div>
+                            <div class="project-card-gallery" aria-hidden="true">
+                                <img src="asset/gallery-1.svg" alt="Gallery preview 1">
+                                <img src="asset/gallery-2.svg" alt="Gallery preview 2">
+                                <img src="asset/gallery-3.svg" alt="Gallery preview 3">
+                                <img src="asset/gallery-4.svg" alt="Gallery preview 4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section style="background:#141412;border-top:1px solid rgba(200, 168, 107, 0.08);border-bottom:1px solid rgba(200, 168, 107, 0.08)">
+                <div style="max-width:1400px;margin:0 auto;padding:4rem 3rem;display:grid;grid-template-columns:repeat(2, 1fr);gap:0" class="px-6 lg:px-12 lg:grid-cols-4">
+                    <div style="padding:2.5rem 2rem;border-right:1px solid rgba(200, 168, 107, 0.08);text-align:center">
+                        <div style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(2.2rem, 4vw, 3.4rem);font-weight:300;color:#C8A86B;line-height:1;margin-bottom:0.6rem;letter-spacing:-0.02em">10+</div>
+                        <div style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#4A4540">Signature Homes</div>
+                    </div>
+                    <div style="padding:2.5rem 2rem;border-right:1px solid rgba(200, 168, 107, 0.08);text-align:center">
+                        <div style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(2.2rem, 4vw, 3.4rem);font-weight:300;color:#C8A86B;line-height:1;margin-bottom:0.6rem;letter-spacing:-0.02em">3</div>
+                        <div style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#4A4540">Desert Regions</div>
+                    </div>
+                    <div style="padding:2.5rem 2rem;border-right:1px solid rgba(200, 168, 107, 0.08);text-align:center">
+                        <div style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(2.2rem, 4vw, 3.4rem);font-weight:300;color:#C8A86B;line-height:1;margin-bottom:0.6rem;letter-spacing:-0.02em">100%</div>
+                        <div style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#4A4540">Crafted In-House</div>
+                    </div>
+                    <div style="padding:2.5rem 2rem;border-right:none;text-align:center">
+                        <div style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(2.2rem, 4vw, 3.4rem);font-weight:300;color:#C8A86B;line-height:1;margin-bottom:0.6rem;letter-spacing:-0.02em">1:1</div>
+                        <div style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:#4A4540">Client Partnership</div>
+                    </div>
+                </div>
+            </section>
+
+            <section style="background:#0C0C0B;padding:100px 0;border-top:1px solid rgba(200, 168, 107, 0.08)">
+                <div style="max-width:1400px;margin:0 auto;padding:0 3rem;display:flex;flex-direction:column;align-items:center;text-align:center" class="px-6 lg:px-12">
+                    <div class="section-label" style="justify-content:center">Begin Your Next Chapter</div>
+                    <h2 style="font-family:Cormorant Garamond, Georgia, serif;font-size:clamp(2.3rem, 5vw, 4.8rem);font-weight:300;color:#EDE9E0;margin:0 0 2rem;line-height:1.05;letter-spacing:-0.01em;max-width:700px">
+                        Ready to build a home that feels
+                        <span style="font-style:italic;color:#C8A86B">unmistakably yours?</span>
+                    </h2>
+                    <p style="font-family:DM Sans, system-ui, sans-serif;font-size:16px;line-height:1.8;color:#5A5550;max-width:480px;margin:0 0 3.5rem;font-weight:300">
+                        Let’s discuss your vision, your site, and the experience you want for the build ahead.
+                    </p>
+                    <a href="contact.html" style="font-size:12px;padding:1.1rem 2.5rem" class="btn-gold">
+                        Start the Conversation
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            document.querySelectorAll('.project-card').forEach((card) => {
+                const toggle = card.querySelector('.project-card-toggle');
+                if (!toggle) return;
+
+                toggle.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    const isOpen = card.classList.contains('is-open');
+
+                    document.querySelectorAll('.project-card').forEach((otherCard) => {
+                        otherCard.classList.remove('is-open');
+                        const otherToggle = otherCard.querySelector('.project-card-toggle');
+                        if (otherToggle) {
+                            otherToggle.setAttribute('aria-expanded', 'false');
+                            otherToggle.textContent = '+';
+                        }
+                    });
+
+                    if (!isOpen) {
+                        card.classList.add('is-open');
+                        toggle.setAttribute('aria-expanded', 'true');
+                        toggle.textContent = '−';
+                    }
+                });
+            });
+        </script>
+
+        <footer style="background:#0C0C0B;border-top:1px solid rgba(200, 168, 107, 0.28);padding:5rem 0 2.5rem;box-shadow:0 -10px 30px rgba(200, 168, 107, 0.06)">
+            <div style="max-width:1400px;margin:0 auto;padding:0 3rem" class="px-6 lg:px-12">
+                <div style="display:grid;grid-template-columns:minmax(280px, 1.1fr) minmax(280px, 0.9fr);gap:2rem;align-items:center;margin-bottom:3rem">
+                    <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.85rem;padding:1rem 0">
+                        <img src="asset/favicon.png" alt="Waypoint Builders favicon" style="width:180px;height:180px;display:block;object-fit:contain" />
+                        <div>
+                            <p style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;line-height:1.7;color:#5A5550;margin:0">Building refined homes with lasting craftsmanship.</p>
+                            <p style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;line-height:1.7;color:#5A5550;margin:0.25rem 0 0">Serving Arizona</p>
+                        </div>
+                    </div>
+                    <div style="padding:1.4rem 1.5rem;border:1px solid rgba(200, 168, 107, 0.16);background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(200, 168, 107, 0.04));box-shadow:inset 0 1px 0 rgba(255,255,255,0.03)">
+                        <div style="font-family:DM Sans, system-ui, sans-serif;font-size:10px;letter-spacing:0.35em;text-transform:uppercase;color:#C8A86B;margin-bottom:1rem;font-weight:500">Contact</div>
+                        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.8rem">
+                            <li style="display:flex;align-items:center;gap:0.7rem"><span style="width:16px;height:16px;color:#C8A86B;display:inline-flex;align-items:center;justify-content:center">☎</span><a href="tel:5203508780" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;text-decoration:none;transition:color 0.3s ease;letter-spacing:0.02em">520-350-8780</a></li>
+                            <li style="display:flex;align-items:center;gap:0.7rem"><span style="width:16px;height:16px;color:#C8A86B;display:inline-flex;align-items:center;justify-content:center">✉</span><a href="mailto:hello@thewaypointbuilders.com" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;text-decoration:none;transition:color 0.3s ease;letter-spacing:0.02em">hello@thewaypointbuilders.com</a></li>
+                            <li style="margin-top:0.35rem">
+                                <a href="contact.html" style="display:inline-block;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C8A86B;text-decoration:none;padding-bottom:2px;border-bottom:1px solid rgba(200, 168, 107, 0.3)">Request a Consultation</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="height:1px;background:rgba(200, 168, 107, 0.08);margin-bottom:1.5rem"></div>
+                <div style="display:flex;flex-wrap:wrap;gap:0.75rem;align-items:center;justify-content:space-between">
+                    <div style="display:flex;flex-wrap:wrap;gap:0.9rem;align-items:center">
+                        <p style="font-family:DM Sans, system-ui, sans-serif;font-size:11px;letter-spacing:0.1em;color:#3A3830;margin:0">© 2026 Waypoint Builders LLC. All rights reserved.</p>
+                        <span style="font-family:DM Sans, system-ui, sans-serif;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#C8A86B">ROC License 366594</span>
+                    </div>
+                    <p style="font-family:Cormorant Garamond, Georgia, serif;font-size:13px;font-style:italic;color:#3A3830;letter-spacing:0.05em;margin:0">Building Beyond Expectations</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
