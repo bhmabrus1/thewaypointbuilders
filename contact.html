@@ -1,139 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" data-precedence="default" />
-        <link rel="stylesheet" href="styles.css" type="text/css" data-precedence="default" />
-        <title>Contact — Waypoint Builders LLC</title>
-        <meta name="description" content="Start a private conversation about your custom home project with Waypoint Builders." />
-        <link rel="icon" type="image/svg+xml" href="asset/favicon.svg" />
-        <link rel="shortcut icon" href="asset/favicon.svg" />
-        <style>
-            @keyframes fadeUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(30px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                }
-                to {
-                    opacity: 1;
-                }
-            }
+    <title>Contact Waypoint Builders LLC | Start Your Custom Home Project</title>
+    <meta
+        name="description"
+        content="Contact Waypoint Builders LLC to start a conversation about your Arizona custom home project, planning goals, and next steps."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://thewaypointbuilders.com/contact.html" />
 
-            .animate-fade-up {
-                animation: fadeUp 0.8s ease-out forwards;
+    <meta property="og:title" content="Contact Waypoint Builders LLC | Start Your Custom Home Project" />
+    <meta
+        property="og:description"
+        content="Contact Waypoint Builders LLC to start a conversation about your Arizona custom home project, planning goals, and next steps."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://thewaypointbuilders.com/contact.html" />
+    <meta property="og:image" content="https://thewaypointbuilders.com/asset/contact-og.jpg" />
+    <meta property="og:site_name" content="Waypoint Builders LLC" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact Waypoint Builders LLC | Start Your Custom Home Project" />
+    <meta
+        name="twitter:description"
+        content="Contact Waypoint Builders LLC to start a conversation about your Arizona custom home project, planning goals, and next steps."
+    />
+    <meta name="twitter:image" content="https://thewaypointbuilders.com/asset/contact-og.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+        data-precedence="default"
+    />
+    <link rel="stylesheet" href="styles.css" type="text/css" data-precedence="default" />
+
+    <link rel="icon" type="image/svg+xml" href="asset/favicon.svg" />
+    <link rel="shortcut icon" href="asset/favicon.svg" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Waypoint Builders LLC",
+      "url": "https://thewaypointbuilders.com/contact.html",
+      "description": "Contact Waypoint Builders LLC to start a conversation about your Arizona custom home project, planning goals, and next steps.",
+      "mainEntity": {
+        "@type": "HomeAndConstructionBusiness",
+        "name": "Waypoint Builders LLC",
+        "url": "https://thewaypointbuilders.com/",
+        "logo": "https://thewaypointbuilders.com/asset/logo.png",
+        "image": "https://thewaypointbuilders.com/asset/contact-og.jpg",
+        "areaServed": {
+          "@type": "State",
+          "name": "Arizona"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
                 opacity: 0;
             }
+            to {
+                opacity: 1;
+            }
+        }
 
-            .animate-fade-in {
-                animation: fadeIn 1s ease-out forwards;
-                opacity: 0;
+        .animate-fade-up {
+            animation: fadeUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-600 {
+            animation-delay: 0.6s;
+        }
+
+        .delay-800 {
+            animation-delay: 0.8s;
+        }
+
+        .contact-hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 2.5rem;
+            align-items: center;
+            padding-top: clamp(2.5rem, 5vw, 4rem);
+        }
+
+        .contact-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .contact-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding-top: clamp(6.5rem, 18vw, 8rem);
             }
 
-            .delay-200 {
-                animation-delay: 0.2s;
+            .contact-hero-copy {
+                max-width: 100%;
             }
 
-            .delay-400 {
-                animation-delay: 0.4s;
+            .contact-card {
+                max-width: 680px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .contact-form-grid {
+                grid-template-columns: 1fr;
             }
 
-            .delay-600 {
-                animation-delay: 0.6s;
+            .contact-card {
+                padding: 1.2rem;
+                width: min(100%, 34rem);
+                max-width: none;
+                margin: 0 auto;
             }
 
-            .delay-800 {
-                animation-delay: 0.8s;
+            .contact-card form {
+                gap: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding-top: 0.25rem;
+            }
+
+            #site-header > div {
+                padding-top: 0.75rem !important;
+                padding-bottom: 0.75rem !important;
+                height: auto !important;
+                min-height: 88px;
+            }
+
+            main > section {
+                min-height: auto !important;
+                align-items: flex-start !important;
+                padding-top: 4.25rem !important;
+                padding-bottom: 2.25rem !important;
             }
 
             .contact-hero-grid {
-                display: grid;
-                grid-template-columns: 1.05fr 0.95fr;
-                gap: 2.5rem;
-                align-items: center;
-                padding-top: clamp(2.5rem, 5vw, 4rem);
+                padding-top: 1.75rem !important;
+                gap: 1.25rem !important;
             }
 
-            .contact-form-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 1rem;
+            .contact-hero-copy {
+                padding-top: 0 !important;
             }
+        }
+    </style>
+</head>
 
-            @media (max-width: 900px) {
-                .contact-hero-grid {
-                    grid-template-columns: 1fr;
-                    gap: 2rem;
-                    padding-top: clamp(6.5rem, 18vw, 8rem);
-                }
-
-                .contact-hero-copy {
-                    max-width: 100%;
-                }
-
-                .contact-card {
-                    max-width: 680px;
-                    margin: 0 auto;
-                }
-            }
-
-            @media (max-width: 640px) {
-                .contact-form-grid {
-                    grid-template-columns: 1fr;
-                }
-
-                .contact-card {
-                    padding: 1.2rem;
-                    width: min(100%, 34rem);
-                    max-width: none;
-                    margin: 0 auto;
-                }
-
-                .contact-card form {
-                    gap: 0.9rem;
-                }
-            }
-
-            @media (max-width: 768px) {
-                header {
-                    padding-top: 0.25rem;
-                }
-
-                #site-header > div {
-                    padding-top: 0.75rem !important;
-                    padding-bottom: 0.75rem !important;
-                    height: auto !important;
-                    min-height: 88px;
-                }
-
-                main > section {
-                    min-height: auto !important;
-                    align-items: flex-start !important;
-                    padding-top: 4.25rem !important;
-                    padding-bottom: 2.25rem !important;
-                }
-
-                .contact-hero-grid {
-                    padding-top: 1.75rem !important;
-                    gap: 1.25rem !important;
-                }
-
-                .contact-hero-copy {
-                    padding-top: 0 !important;
-                }
-            }
-        </style>
-    </head>
     <body>
         <header id="site-header" style="position:fixed;top:0;left:0;right:0;z-index:100;transition:background 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease, box-shadow 0.5s ease;background:transparent;backdrop-filter:none;border-bottom:1px solid transparent;box-shadow:none">
             <div style="max-width:1400px;margin:0 auto;padding:0 3rem;display:flex;align-items:center;justify-content:space-between;height:92px" class="px-6 lg:px-12">
