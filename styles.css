@@ -596,6 +596,28 @@ body {
     overflow-x: hidden;
 }
 
+.site-footer-grid {
+    position: relative;
+    overflow: hidden;
+}
+
+.site-footer-grid::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.055;
+    background-image:
+        linear-gradient(rgba(200, 168, 107, 0.8) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 168, 107, 0.8) 1px, transparent 1px);
+    background-size: 100% 72px, 72px 100%;
+}
+
+.site-footer-grid > * {
+    position: relative;
+    z-index: 1;
+}
+
 main {
     width: 100%;
     overflow-x: hidden;

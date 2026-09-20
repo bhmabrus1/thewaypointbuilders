@@ -3,13 +3,24 @@
     <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0c0c0b" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="geo.region" content="US-AZ" />
+    <meta name="geo.placename" content="Arizona" />
+    <meta name="geo.position" content="34.0489;-111.0937" />
+    <meta name="ICBM" content="34.0489, -111.0937" />
 
     <title>About Waypoint Builders LLC | Arizona Custom Home Builder</title>
     <meta
         name="description"
-        content="Meet the team behind Waypoint Builders LLC and learn about our approach to custom home building, craftsmanship, and personal service in Arizona."
+        content="Meet Waypoint Builders LLC, a family-led Arizona custom home builder serving Tucson, Phoenix, Northern, and Southern Arizona."
     />
-    <meta name="robots" content="index, follow" />
+    <meta
+        name="keywords"
+        content="Waypoint Builders LLC, Arizona custom home builder, custom home construction team, luxury home builder Arizona, home building company Arizona, residential construction experts"
+    />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content="Waypoint Builders LLC" />
     <link rel="canonical" href="https://thewaypointbuilders.com/about.html" />
 
     <meta property="og:title" content="About Waypoint Builders LLC | Arizona Custom Home Builder" />
@@ -21,6 +32,7 @@
     <meta property="og:url" content="https://thewaypointbuilders.com/about.html" />
     <meta property="og:image" content="https://thewaypointbuilders.com/asset/about.png" />
     <meta property="og:site_name" content="Waypoint Builders LLC" />
+    <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="About Waypoint Builders LLC | Arizona Custom Home Builder" />
@@ -29,6 +41,7 @@
         content="Meet the team behind Waypoint Builders LLC and learn about our approach to custom home building, craftsmanship, and personal service in Arizona."
     />
     <meta name="twitter:image" content="https://thewaypointbuilders.com/asset/about.png" />
+    <meta name="twitter:site" content="@WaypointBuilders" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
@@ -41,6 +54,7 @@
 
     <link rel="icon" type="image/x-icon" href="asset/favicon.ico" />
     <link rel="shortcut icon" href="asset/favicon.ico" />
+    <link rel="preload" as="image" href="asset/about.png" fetchpriority="high" />
 
     <script type="application/ld+json">
     {
@@ -55,10 +69,13 @@
         "url": "https://thewaypointbuilders.com/",
         "logo": "https://thewaypointbuilders.com/asset/logo.png",
         "image": "https://thewaypointbuilders.com/asset/about.png",
-        "areaServed": {
-          "@type": "State",
-          "name": "Arizona"
-        }
+        "areaServed": [
+          { "@type": "State", "name": "Arizona" },
+          { "@type": "City", "name": "Tucson, Arizona" },
+          { "@type": "City", "name": "Phoenix, Arizona" },
+          { "@type": "AdministrativeArea", "name": "Northern Arizona" },
+          { "@type": "AdministrativeArea", "name": "Southern Arizona" }
+        ]
       }
     }
     </script>
@@ -117,59 +134,78 @@
 
         .team-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            padding: 2rem;
-            max-width: 500px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
             margin: 0 auto;
+            align-items: stretch;
         }
 
         .team-member {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
+            align-items: flex-start;
+            text-align: left;
+            background: rgba(255,255,255,0.025);
+            border: 1px solid rgba(229, 199, 122, 0.18);
+            border-radius: 20px;
+            padding: 1.6rem 1.5rem;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            min-height: 220px;
+            width: min(100%, 290px);
         }
 
-        .team-member-oval {
-            width: 220px;
-            height: 300px;
+        .team-member:hover {
+            transform: translateY(-4px);
+            border-color: rgba(229, 199, 122, 0.42);
+            box-shadow: 0 0 0 1px rgba(229, 199, 122, 0.12), 0 18px 30px rgba(12, 12, 11, 0.16);
+        }
+
+        .team-badge {
+            width: 72px;
+            height: 72px;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(229, 199, 122, 0.15) 0%, rgba(164, 130, 64, 0.1) 100%);
-            border: 2px solid rgba(164, 130, 64, 0.3);
+            background: linear-gradient(135deg, rgba(229, 199, 122, 0.2) 0%, rgba(164, 130, 64, 0.28) 100%);
+            border: 1px solid rgba(200, 168, 107, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 2rem auto;
-            font-size: 4rem;
-            transition: all 0.3s ease;
-            overflow: hidden;
-            object-fit: cover;
-        }
-
-        .team-member:hover .team-member-oval {
-            border-color: rgba(229, 199, 122, 0.6);
-            background: linear-gradient(135deg, rgba(229, 199, 122, 0.25) 0%, rgba(164, 130, 64, 0.2) 100%);
-            transform: scale(1.05);
+            font-family: "Cormorant Garamond", serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #F7F2E8;
+            margin-bottom: 1rem;
         }
 
         .team-member h3 {
             font-family: "Cormorant Garamond", serif;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-weight: 500;
             color: #E5C77A;
             margin-bottom: 0.5rem;
             letter-spacing: 0.01em;
+            white-space: nowrap;
+            line-height: 1.1;
         }
 
         .team-member .role {
             font-family: "DM Sans", sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #A48240;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
             margin-bottom: 1rem;
-            font-weight: 500;
+            font-weight: 600;
+        }
+
+        .team-member p {
+            font-family: "DM Sans", sans-serif;
+            font-size: 0.96rem;
+            line-height: 1.7;
+            color: #7A7570;
+            margin: 0;
         }
 
         .team-member p {
@@ -205,10 +241,110 @@
         }
 
         .about-footer {
+            position: relative;
+            overflow: hidden;
             background: #0C0C0B;
             border-top: 1px solid rgba(200, 168, 107, 0.28);
             padding: 5rem 0 2.5rem;
             box-shadow: 0 -10px 30px rgba(200, 168, 107, 0.06);
+        }
+
+        .about-footer::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.055;
+            background-image:
+                linear-gradient(rgba(200, 168, 107, 0.8) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(200, 168, 107, 0.8) 1px, transparent 1px);
+            background-size: 100% 72px, 72px 100%;
+        }
+
+        .about-footer > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .trusted-suppliers {
+            overflow: hidden;
+            padding: 0;
+            margin-bottom: 8rem;
+            background: #0C0C0B;
+            border-top: 1px solid rgba(200, 168, 107, 0.12);
+            border-bottom: 1px solid rgba(200, 168, 107, 0.12);
+        }
+
+        .trusted-suppliers-heading {
+            margin: 0 auto;
+            padding: 0 3rem;
+            color: #E5C77A;
+            font-family: "Cormorant Garamond", serif !important;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            text-align: center;
+        }
+
+        .supplier-marquee {
+            display: flex;
+            width: max-content;
+            gap: 4rem;
+            white-space: nowrap;
+            padding: 0.15rem 0;
+            will-change: transform;
+        }
+
+        .supplier-marquee.animate-marquee {
+            animation: 40s linear infinite marquee;
+        }
+
+        .supplier-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        .supplier-logo {
+            display: flex;
+            flex-direction: column;
+            width: 190px;
+            height: 78px;
+            align-items: center;
+            justify-content: center;
+            padding: 0.7rem 1rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .supplier-logo:hover {
+            opacity: 0.7;
+        }
+
+        .supplier-logo img {
+            width: 100%;
+            height: 34px;
+            object-fit: contain;
+            filter: grayscale(1) brightness(0) invert(1);
+            opacity: 0.62;
+        }
+
+        .supplier-logo span {
+            margin-top: 0.35rem;
+            color: rgba(237, 233, 224, 0.68);
+            font-family: DM Sans, system-ui, sans-serif;
+            font-size: 9px;
+            letter-spacing: 0.14em;
+            line-height: 1.2;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .supplier-logo img[src*="arizona-building-supply"] {
+            filter: invert(1) grayscale(1) brightness(1.8);
+            opacity: 0.8;
+        }
+
+        @media (max-width: 640px) {
+            .trusted-suppliers-heading { padding: 0 1.5rem; line-height: 1.6; }
+            .supplier-logo { width: 160px; height: 68px; }
         }
 
         @media (max-width: 768px) {
@@ -308,11 +444,11 @@
         <!-- Hero Section -->
         <section class="about-hero">
             <div class="about-hero-content">
-                <h1 class="animate-fade-up">About Waypoint
+                <h1 class="animate-fade-up">About Waypoint Builders
                             <!-- -->
-                            <span style="font-style:italic;color:#C8A86B">Builders</span>
+                            <span style="font-style:italic;color:#C8A86B">LLC</span>
                         </h1>
-                <p class="animate-fade-up delay-200">We are a family-owned business dedicated to bringing uncompromising quality and craftsmanship to every project. With a deep commitment to excellence, our team brings decades of combined experience and a personal touch to custom home building.</p>
+                <p class="animate-fade-up delay-200">Waypoint Builders LLC is a family-owned Arizona custom home builder known for thoughtful design, honest communication, and craftsmanship that stands the test of time. We create luxury residences and refined living spaces tailored to how our clients actually live, serving Northern and Southern Arizona, including Tucson, Phoenix, and surrounding communities.</p>
             </div>
         </section>
 
@@ -323,43 +459,31 @@
                         Team
                     </h2>
             <div class="team-grid">
-                <!-- Jackson Chavez -->
                 <div class="team-member animate-fade-up delay-200">
-                    <div class="team-member-oval">
-                        <img src="asset/jackson.png" alt="Jackson Chavez" style="width:100%;height:100%;object-fit:cover;" />
-                    </div>
+                    <div class="team-badge">JC</div>
                     <h3>Jackson Chavez</h3>
                     <div class="role">The Master Builder</div>
                     <p>Visionary leader bringing decades of building expertise and innovation to every custom home project.</p>
                 </div>
 
-                <!-- Mercedes Vasquez -->
                 <div class="team-member animate-fade-up delay-400">
-                    <div class="team-member-oval">
-                        <img src="asset/mercedes.png" alt="Mercedes Vasquez" style="width:100%;height:100%;object-fit:cover;" />
-                    </div>
+                    <div class="team-badge">MV</div>
                     <h3>Mercedes Vasquez</h3>
                     <div class="role">Senior Budget Advisor</div>
                     <p>Financial strategist ensuring every project delivers maximum value without compromising on quality.</p>
                 </div>
 
-                <!-- Pedro Chavez -->
                 <div class="team-member animate-fade-up delay-600">
-                    <div class="team-member-oval">
-                        <img src="asset/pedro.png" alt="Pedro Chavez" style="width:100%;height:100%;object-fit:cover;" />
-                    </div>
+                    <div class="team-badge">PC</div>
                     <h3>Pedro Chavez</h3>
                     <div class="role">Quality Assurance Inspector</div>
                     <p>Meticulous quality controller maintaining the highest standards at every stage of construction.</p>
                 </div>
 
-                <!-- Joe Chavez -->
                 <div class="team-member animate-fade-up delay-800">
-                    <div class="team-member-oval">
-                        <img src="asset/joe.png" alt="Joe Chavez" style="width:100%;height:100%;object-fit:cover;" />
-                    </div>
+                    <div class="team-badge">JC</div>
                     <h3>Joe Chavez</h3>
-                    <div class="role">INTERIOR & EXTERIOR DESIGNER</div>
+                    <div class="role">Interior &amp; Exterior Designer</div>
                     <p>Creative designer transforming spaces into beautiful, functional, and personalized sanctuaries.</p>
                 </div>
             </div>
@@ -374,14 +498,34 @@
             <p>At Waypoint Builders, we believe in building homes with the same care and dedication we'd put into our own family's houses. This family-owned business thrives on trust, transparency, and an unwavering commitment to delivering work that exceeds expectations. Every beam, every detail, every finish reflects our pride and our promise to you.</p>
         </section>
 
+        <section class="trusted-suppliers" aria-labelledby="trusted-suppliers-heading">
+            <h2 id="trusted-suppliers-heading" class="trusted-suppliers-heading"><span style="font-style:italic;color:#C8A86B">Trusted Partners</span></h2>
+            <div class="supplier-marquee animate-marquee" style="display:flex;gap:4rem;white-space:nowrap;width:max-content" aria-label="Selected supplier logos">
+                <a class="supplier-logo" href="https://www.azbuildingsupply.com/" target="_blank" rel="noopener noreferrer" aria-label="Arizona Building Supply website"><img src="asset/suppliers/arizona-building-supply.png" alt="Arizona Building Supply" loading="lazy" decoding="async" /><span>Arizona Building Supply</span></a>
+                <a class="supplier-logo" href="https://www.rlsupply.com/" target="_blank" rel="noopener noreferrer" aria-label="R&amp;L Supply website"><img src="asset/suppliers/rl-supply.png" alt="R&amp;L Supply" loading="lazy" decoding="async" /><span>R&amp;L Supply</span></a>
+                <a class="supplier-logo" href="https://www.caterpillar.com/" target="_blank" rel="noopener noreferrer" aria-label="Caterpillar website"><img src="asset/suppliers/caterpillar.png" alt="Caterpillar" loading="lazy" decoding="async" /><span>Caterpillar</span></a>
+                <a class="supplier-logo" href="https://www.abcsupply.com/" target="_blank" rel="noopener noreferrer" aria-label="ABC Supply website"><img src="asset/suppliers/abc-supply.png" alt="ABC Supply" loading="lazy" decoding="async" /><span>ABC Supply</span></a>
+                <a class="supplier-logo" href="https://sunvalleysupply.com/" target="_blank" rel="noopener noreferrer" aria-label="Sun Valley Supply website"><img src="asset/suppliers/sun-valley-supply.png" alt="Sun Valley Supply" loading="lazy" decoding="async" /><span>Sun Valley Supply</span></a>
+                <a class="supplier-logo" href="https://www.ferguson.com/" target="_blank" rel="noopener noreferrer" aria-label="Ferguson website"><img src="asset/suppliers/ferguson.png" alt="Ferguson" loading="lazy" decoding="async" /><span>Ferguson</span></a>
+                <a class="supplier-logo" href="https://www.rwcbldg.com/" target="_blank" rel="noopener noreferrer" aria-label="RWC Building Products website"><img src="asset/suppliers/rwc-full-logo-full-color-rgb.png" alt="RWC Building Products" loading="lazy" decoding="async" /><span>RWC Building Products</span></a>
+                <a class="supplier-logo" href="https://www.azbuildingsupply.com/" target="_blank" rel="noopener noreferrer" aria-label="Arizona Building Supply website"><img src="asset/suppliers/arizona-building-supply.png" alt="Arizona Building Supply" loading="lazy" decoding="async" /><span>Arizona Building Supply</span></a>
+                <a class="supplier-logo" href="https://www.rlsupply.com/" target="_blank" rel="noopener noreferrer" aria-label="R&amp;L Supply website"><img src="asset/suppliers/rl-supply.png" alt="R&amp;L Supply" loading="lazy" decoding="async" /><span>R&amp;L Supply</span></a>
+                <a class="supplier-logo" href="https://www.caterpillar.com/" target="_blank" rel="noopener noreferrer" aria-label="Caterpillar website"><img src="asset/suppliers/caterpillar.png" alt="Caterpillar" loading="lazy" decoding="async" /><span>Caterpillar</span></a>
+                <a class="supplier-logo" href="https://www.abcsupply.com/" target="_blank" rel="noopener noreferrer" aria-label="ABC Supply website"><img src="asset/suppliers/abc-supply.png" alt="ABC Supply" loading="lazy" decoding="async" /><span>ABC Supply</span></a>
+                <a class="supplier-logo" href="https://sunvalleysupply.com/" target="_blank" rel="noopener noreferrer" aria-label="Sun Valley Supply website"><img src="asset/suppliers/sun-valley-supply.png" alt="Sun Valley Supply" loading="lazy" decoding="async" /><span>Sun Valley Supply</span></a>
+                <a class="supplier-logo" href="https://www.ferguson.com/" target="_blank" rel="noopener noreferrer" aria-label="Ferguson website"><img src="asset/suppliers/ferguson.png" alt="Ferguson" loading="lazy" decoding="async" /><span>Ferguson</span></a>
+                <a class="supplier-logo" href="https://www.rwcbldg.com/" target="_blank" rel="noopener noreferrer" aria-label="RWC Building Products website"><img src="asset/suppliers/rwc-full-logo-full-color-rgb.png" alt="RWC Building Products" loading="lazy" decoding="async" /><span>RWC Building Products</span></a>
+            </div>
+        </section>
+
         <footer class="about-footer">
             <div style="max-width:1400px;margin:0 auto;padding:0 3rem" class="px-6 lg:px-12">
                 <div style="display:grid;grid-template-columns:minmax(280px, 1.1fr) minmax(280px, 0.9fr);gap:2rem;align-items:center;margin-bottom:3rem">
                     <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.85rem;padding:1rem 0">
-                        <img src="asset/favicon.png" alt="Waypoint Builders favicon" style="width:180px;height:180px;display:block;object-fit:contain" />
+                        <img src="asset/favicon.png" alt="Waypoint Builders favicon" loading="lazy" decoding="async" style="width:180px;height:180px;display:block;object-fit:contain" />
                         <div>
                             <p style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;line-height:1.7;color:#5A5550;margin:0">Building refined homes with lasting craftsmanship.</p>
-                            <p style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;line-height:1.7;color:#5A5550;margin:0.25rem 0 0">Serving Arizona</p>
+                            <p style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;line-height:1.7;color:#5A5550;margin:0.25rem 0 0">Serving Northern &amp; Southern Arizona</p>
                         </div>
                     </div>
                     <div style="padding:1.4rem 1.5rem;border:1px solid rgba(200, 168, 107, 0.16);background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(200, 168, 107, 0.04));box-shadow:inset 0 1px 0 rgba(255,255,255,0.03)">
@@ -391,6 +535,9 @@
                             <li style="display:flex;align-items:center;gap:0.7rem"><span style="width:16px;height:16px;color:#C8A86B;display:inline-flex;align-items:center;justify-content:center">✉</span><a href="mailto:hello@thewaypointbuilders.com" style="font-family:DM Sans, system-ui, sans-serif;font-size:13px;color:#EDE9E0;text-decoration:none;transition:color 0.3s ease;letter-spacing:0.02em">hello@thewaypointbuilders.com</a></li>
                             <li style="margin-top:0.35rem">
                                 <a href="contact.html" style="display:inline-block;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C8A86B;text-decoration:none;padding-bottom:2px;border-bottom:1px solid rgba(200, 168, 107, 0.3)">Request a Consultation</a>
+                            </li>
+                            <li>
+                                <a href="faq.html" style="display:inline-block;font-family:DM Sans, system-ui, sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#C8A86B;text-decoration:none;padding-bottom:2px;border-bottom:1px solid rgba(200, 168, 107, 0.3)">Frequently Asked Questions</a>
                             </li>
                         </ul>
                     </div>
